@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">InsectIdentify</string>
+    <string name="app_name">Insect ID</string>
+    <string name="startBtnText">Begin Identification</string>
 </resources>
