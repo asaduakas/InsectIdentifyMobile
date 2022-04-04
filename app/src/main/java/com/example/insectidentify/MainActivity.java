@@ -9,9 +9,13 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity implements OnClickListener {
     Button logInBtn;
     Button startBtn;
+    String status = "notLoggedIn";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +31,20 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     public  void onClick(View v){
         switch (v.getId()){
             case R.id.LogInBtn:
-                Intent intent = new Intent(this, LoginActivity.class);
-                startActivity(intent);
-                break;
+                if(this.status.equals("notLoggedIn")){
+                    Intent intent = new Intent(this, LoginActivity.class);
+                    startActivity(intent);
+                    break;
+                }
+                else if(this.status.equals("loggedIn")){
+                    logInBtn.setText(R.string.logIn);
+                    this.status = "notLoggedIn";
+                    TextView statusBar = findViewById(R.id.status);
+                    statusBar.setText(R.string.statusEmpty);
+                    //Log out from database
+                    Snackbar confirmationMessage = Snackbar.make(findViewById(R.id.LogInBtn), "Signed out successfully!", BaseTransientBottomBar.LENGTH_LONG);
+                    confirmationMessage.show();
+                }
             case R.id.StartBtn:
                 break;
         }
@@ -44,10 +59,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         if(receivedStatus != null){
             if(receivedStatus.equals("admin")){
                 statusBar.setText(R.string.statusAdmin);
+                this.status = "loggedIn";
+                logInBtn.setText(R.string.logOut);
             }
             else if (receivedStatus.equals("default")){
                 statusBar.setText(R.string.statusDefault);
+                this.status = "loggedIn";
+                logInBtn.setText(R.string.logOut);
             }
         }
     }
+
 }
