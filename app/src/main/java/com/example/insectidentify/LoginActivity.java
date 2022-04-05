@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v){
         switch (v.getId()){
             case R.id.CancelBtn:
-                finish();
+                this.finish();
                 break;
             case R.id.LoginScreenBtn:
                 usernameIL = findViewById(R.id.tlUsername);
@@ -51,13 +51,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("status","admin");
                     startActivity(intent);
-                    finish();
+                    this.finish();
                 }
                 else if(tlUsername.equals(getString(R.string.DefaultUname)) && tlPassword.equals(getString(R.string.DefaultPass))){
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("status","default");
                     startActivity(intent);
-                    finish();
+                    this.finish();
                 }
                 else{
                     Snackbar errorMessage = Snackbar.make(findViewById(R.id.LoginScreenBtn), "Wrong Username or Password!", BaseTransientBottomBar.LENGTH_LONG);

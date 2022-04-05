@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     confirmationMessage.show();
                 }
             case R.id.StartBtn:
+                Intent intent = new Intent(this,DichoActivity.class);
+                startActivity(intent);
                 break;
         }
     }

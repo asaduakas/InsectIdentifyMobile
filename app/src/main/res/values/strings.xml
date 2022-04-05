@@ -1,9 +1,12 @@
 <resources>
+    <!-- Crucial -->
     <string name="app_name">Insect ID</string>
     <string name="AdminUname">f896d5b6a11500644916de8f11a23d0cba7ef3df34f2dca20bab768a8f15817e</string>
     <string name="AdminPass">238b8d211a86fe7614ed39b81c3f739afcbec17095f8c11a14fb341ff09d8b6a</string>
     <string name="DefaultUname">8e4e01e16d95def7711f3d65b4affbc925b850f741b7d7bb5d88324b829809e7</string>
     <string name="DefaultPass">0d9548d7d5e894e2c5eb76e72ff587d1cfdf02e241c535cf2d68a88e629e0401</string>
+
+    <!-- Main and Login activities -->
     <string name="statusEmpty"></string>
     <string name="statusAdmin">Logged in as Admin</string>
     <string name="statusDefault">Logged in as Default</string>
@@ -14,4 +17,8 @@
     <string name="pwHint">Password</string>
     <string name="pwForgot">Forgot Password</string>
     <string name="cancelBtn">Cancel</string>
+
+    <!-- Toolbar and Menu-->
+    <string name="addEntry">Insert an Entry</string>
+
 </resources>
