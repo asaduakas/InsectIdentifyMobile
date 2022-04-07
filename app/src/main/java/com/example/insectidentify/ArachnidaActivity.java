@@ -8,18 +8,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class DichoActivity extends AppCompatActivity implements View.OnClickListener {
-    Button leg8;
-    Button leg6;
-    Button backBtn;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
+
+public class ArachnidaActivity extends AppCompatActivity implements OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dicho);
-        //TOOLBAR SETUP
+        setContentView(R.layout.activity_arachnida);
+        // TOOLBAR SETUP
         Toolbar toolbar = findViewById(R.id.include);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -27,28 +29,15 @@ public class DichoActivity extends AppCompatActivity implements View.OnClickList
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-        leg6 = findViewById(R.id.l6);
-        leg6.setOnClickListener(this);
-        leg8 = findViewById(R.id.l8);
-        leg8.setOnClickListener(this);
-        backBtn = findViewById(R.id.backBtn);
-        backBtn.setOnClickListener(this);
-
     }
 
-    @Override
-    public void onClick(View v){
+    public  void onClick(View v){
         switch (v.getId()){
             case R.id.l6:
-                Intent intent = new Intent(this,WingsActivity.class);
-                startActivity(intent);
                 break;
             case R.id.l8:
-                Intent intent2 = new Intent(this,ArachnidaActivity.class);
-                startActivity(intent2);
-                break;
-            case R.id.backBtn:
-                this.finish();
+                Intent intent = new Intent(this,ArachnidaActivity.class);
+                startActivity(intent);
                 break;
         }
     }
@@ -60,5 +49,4 @@ public class DichoActivity extends AppCompatActivity implements View.OnClickList
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
 }

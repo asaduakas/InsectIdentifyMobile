@@ -10,15 +10,15 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-public class DichoActivity extends AppCompatActivity implements View.OnClickListener {
-    Button leg8;
-    Button leg6;
+public class WingsActivity extends AppCompatActivity implements View.OnClickListener {
+    Button wingsP;
+    Button wingsA;
     Button backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dicho);
+        setContentView(R.layout.activity_wings);
         //TOOLBAR SETUP
         Toolbar toolbar = findViewById(R.id.include);
         setSupportActionBar(toolbar);
@@ -27,25 +27,20 @@ public class DichoActivity extends AppCompatActivity implements View.OnClickList
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-        leg6 = findViewById(R.id.l6);
-        leg6.setOnClickListener(this);
-        leg8 = findViewById(R.id.l8);
-        leg8.setOnClickListener(this);
+        wingsP = findViewById(R.id.wp);
+        wingsP.setOnClickListener(this);
+        wingsA = findViewById(R.id.wa);
+        wingsA.setOnClickListener(this);
         backBtn = findViewById(R.id.backBtn);
         backBtn.setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View v){
         switch (v.getId()){
-            case R.id.l6:
-                Intent intent = new Intent(this,WingsActivity.class);
-                startActivity(intent);
+            case R.id.wp:
                 break;
-            case R.id.l8:
-                Intent intent2 = new Intent(this,ArachnidaActivity.class);
-                startActivity(intent2);
+            case R.id.wa:
                 break;
             case R.id.backBtn:
                 this.finish();
@@ -60,5 +55,4 @@ public class DichoActivity extends AppCompatActivity implements View.OnClickList
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
 }

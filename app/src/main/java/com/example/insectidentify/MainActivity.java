@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     //Log out from database
                     Snackbar confirmationMessage = Snackbar.make(findViewById(R.id.LogInBtn), "Signed out successfully!", BaseTransientBottomBar.LENGTH_LONG);
                     confirmationMessage.show();
+                    break;
                 }
             case R.id.StartBtn:
                 Intent intent = new Intent(this,DichoActivity.class);

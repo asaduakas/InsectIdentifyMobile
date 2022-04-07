@@ -10,15 +10,32 @@
     <string name="statusEmpty"></string>
     <string name="statusAdmin">Logged in as Admin</string>
     <string name="statusDefault">Logged in as Default</string>
-    <string name="logIn">Log In</string>
-    <string name="logOut">Log Out</string>
-    <string name="startBtnText">Begin Identification</string>
     <string name="usernameHint">Username</string>
     <string name="pwHint">Password</string>
     <string name="pwForgot">Forgot Password</string>
+
+    <!-- Buttons -->
+    <string name="logIn">Log In</string>
+    <string name="logOut">Log Out</string>
+    <string name="startBtnText">Begin Identification</string>
     <string name="cancelBtn">Cancel</string>
+    <string name="backBtn">Back</string>
+    <string name="saveBtn">Save entry to Database</string>
+    <string name="restartBtn">Restart</string>
+    <string name="addEntry">Insert an Entry</string>
 
     <!-- Toolbar and Menu-->
-    <string name="addEntry">Insert an Entry</string>
+    <string name="configureSampleBtn">Configure Sample</string>
+
+    <!-- Dicho Questions -->
+    <string name="numOfLegs">Number of Legs</string>
+    <string name="numOfLegsA1">6 Legs</string>
+    <string name="numOfLegsA2">8 Legs</string>
+
+    <string name="arachnidaAnswer">Your insect is an Arachnida</string>
+
+    <string name="wingsPres">Presence of Wings</string>
+    <string name="wingsPres1">Wings Present</string>
+    <string name="wingsPres2">Wings Absent</string>
 
 </resources>
