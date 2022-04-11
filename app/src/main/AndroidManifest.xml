@@ -10,6 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InsectIdentify">
         <activity
+            android:name=".DoubleQuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CollembolaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CollophoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".antennaPresActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MouthpartActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".WingsActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />

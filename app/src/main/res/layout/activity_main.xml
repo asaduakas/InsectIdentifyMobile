@@ -61,7 +61,7 @@
         android:layout_weight="0"
         android:text="Tutorial"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="h,3:1"
+        app:layout_constraintDimensionRatio="w,3:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_min="50dp"
         app:layout_constraintStart_toStartOf="parent"

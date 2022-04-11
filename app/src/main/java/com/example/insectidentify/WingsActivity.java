@@ -13,7 +13,7 @@ import android.widget.Button;
 public class WingsActivity extends AppCompatActivity implements View.OnClickListener {
     Button wingsP;
     Button wingsA;
-    Button backBtn;
+    Button helpBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +31,8 @@ public class WingsActivity extends AppCompatActivity implements View.OnClickList
         wingsP.setOnClickListener(this);
         wingsA = findViewById(R.id.wa);
         wingsA.setOnClickListener(this);
-        backBtn = findViewById(R.id.backBtn);
-        backBtn.setOnClickListener(this);
+        helpBtn = findViewById(R.id.helpBtn);
+        helpBtn.setOnClickListener(this);
     }
 
     @Override
@@ -41,10 +41,12 @@ public class WingsActivity extends AppCompatActivity implements View.OnClickList
             case R.id.wp:
                 break;
             case R.id.wa:
+                Intent intent = new Intent(this, antennaPresActivity.class);
+                startActivity(intent);
                 break;
-            case R.id.backBtn:
-                this.finish();
+            case R.id.helpBtn:
                 break;
+
         }
     }
 

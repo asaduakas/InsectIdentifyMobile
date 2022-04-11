@@ -1,13 +1,13 @@
 <resources>
     <!-- Crucial -->
     <string name="app_name">Insect ID</string>
-    <string name="AdminUname">f896d5b6a11500644916de8f11a23d0cba7ef3df34f2dca20bab768a8f15817e</string>
-    <string name="AdminPass">238b8d211a86fe7614ed39b81c3f739afcbec17095f8c11a14fb341ff09d8b6a</string>
-    <string name="DefaultUname">8e4e01e16d95def7711f3d65b4affbc925b850f741b7d7bb5d88324b829809e7</string>
-    <string name="DefaultPass">0d9548d7d5e894e2c5eb76e72ff587d1cfdf02e241c535cf2d68a88e629e0401</string>
+    <string name="AdminUname" translatable="false">f896d5b6a11500644916de8f11a23d0cba7ef3df34f2dca20bab768a8f15817e</string>
+    <string name="AdminPass" translatable="false">238b8d211a86fe7614ed39b81c3f739afcbec17095f8c11a14fb341ff09d8b6a</string>
+    <string name="DefaultUname" translatable="false">8e4e01e16d95def7711f3d65b4affbc925b850f741b7d7bb5d88324b829809e7</string>
+    <string name="DefaultPass" translatable="false">0d9548d7d5e894e2c5eb76e72ff587d1cfdf02e241c535cf2d68a88e629e0401</string>
 
     <!-- Main and Login activities -->
-    <string name="statusEmpty"></string>
+    <string name="statusEmpty" translatable="false"></string>
     <string name="statusAdmin">Logged in as Admin</string>
     <string name="statusDefault">Logged in as Default</string>
     <string name="usernameHint">Username</string>
@@ -19,23 +19,75 @@
     <string name="logOut">Log Out</string>
     <string name="startBtnText">Begin Identification</string>
     <string name="cancelBtn">Cancel</string>
-    <string name="backBtn">Back</string>
-    <string name="saveBtn">Save entry to Database</string>
+    <string name="saveBtn">Submit to Database</string>
     <string name="restartBtn">Restart</string>
     <string name="addEntry">Insert an Entry</string>
 
     <!-- Toolbar and Menu-->
     <string name="configureSampleBtn">Configure Sample</string>
 
+    <!-- Dicho Answers -->
+    <string name="asnwerDisc">Your insect is</string>
+    <string name="ArachnidaAnswer">Arachnida</string>
+    <string name="HymenopteraAnswer">Hymenoptera (Ants)</string>
+    <string name="ThysAnswer">Thysanoptera (Thrips)</string>
+    <string name="SternAnswer">Sternorrhyncha</string>
+    <string name="DipteraAnswer">Diptera</string>
+    <string name="PsocAnswer">Psocoptera</string>
+    <string name="HemipAnswer">Hemiptera</string>
+    <string name="DermAnswer">Dermaptera</string>
+    <string name="OrthoAnswer">Orthoptera</string>
+    <string name="CollemAnswer">Collembola</string>
+
     <!-- Dicho Questions -->
+    <string name="y">YES</string>
+    <string name="n">NO</string>
+    <!-- Left part of the tree -->
     <string name="numOfLegs">Number of Legs</string>
     <string name="numOfLegsA1">6 Legs</string>
     <string name="numOfLegsA2">8 Legs</string>
 
-    <string name="arachnidaAnswer">Your insect is an Arachnida</string>
-
     <string name="wingsPres">Presence of Wings</string>
     <string name="wingsPres1">Wings Present</string>
     <string name="wingsPres2">Wings Absent</string>
+
+    <string name="mouthPart">Mouthpart</string>
+    <string name="mp1">Straw like (Piercing or Sucking)</string>
+    <string name="mp2">Coiled</string>
+    <string name="mp3">Not piercing nor sucking</string>
+
+    <!-- Right part of the tree -->
+    <string name="ant">Presence of Antennae</string>
+    <string name="ant1">Antennae Present</string>
+    <string name="ant2">Antennae Absent</string>
+
+    <string name="collo">Presence of Collophore or Spring like Organ</string>
+    <string name="collo1">Collophore and spring-like organ present</string>
+    <string name="collo2">Both organs absent</string>
+
+    <string name="body">Shape of Body</string>
+    <string name="body1">Body not Flattened</string>
+    <string name="body2">Body Flattened laterally or dorsoventrally</string>
+
+    <string name="abd">Connection between abdomen and thorax</string>
+    <string name="abd1">Abdomen and thorax not narrowly joined together</string>
+    <string name="abd2">Abdomen and thorax narrowly joined together</string>
+
+    <string name="suck">Sucking mouthparts are externally visible</string>
+
+    <string name="antLen">Length of Antenna</string>
+    <string name="antLen1">Longer than Head</string>
+    <string name="antLen2">Shorter than head</string>
+
+    <string name="tarClaw">Tarsal Claws are Present</string>
+
+    <string name="shapeMouth">Shape of mouthpart</string>
+    <string name="shapeMouth1">Piercing-sucking mouthparts</string>
+    <string name="shapeMouth2">Chewing mouthparts</string>
+
+    <string name="abdo">Abdominal Forcepts Present</string>
+
+    <string name="abdo1">Cerci Present</string>
+
 
 </resources>
