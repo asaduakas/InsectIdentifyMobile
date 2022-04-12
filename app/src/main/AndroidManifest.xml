@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InsectIdentify">
         <activity
+            android:name=".AnswerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TripleQuestionActivity"
+            android:exported="false" />
+        <activity
             android:name=".DoubleQuestionActivity"
             android:exported="false" />
         <activity

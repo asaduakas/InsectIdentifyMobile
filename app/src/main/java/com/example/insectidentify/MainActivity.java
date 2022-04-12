@@ -3,19 +3,34 @@ package com.example.insectidentify;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import com.google.gson.*;
 
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.stream.JsonReader;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Hashtable;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
     Button logInBtn;
     Button startBtn;
     String status = "notLoggedIn";
+
+    public static HashMap<Integer, Intent> questionIntents;
+    public static HashMap<Integer, QuestionViewModel> questionViewModelDictionary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +40,39 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         logInBtn.setOnClickListener(this);
         startBtn = findViewById(R.id.StartBtn);
         startBtn.setOnClickListener(this);
+
+        questionViewModelDictionary = createModels();
+        questionIntents = createIntents();
+    }
+
+    private HashMap<Integer, QuestionViewModel> createModels(){
+        HashMap<Integer, QuestionViewModel> _tmp = new HashMap<>();
+        JsonObject object;
+        Gson gson = new Gson();
+
+        JsonParser parser = new JsonParser();
+        JsonElement element = parser.parse(
+                new InputStreamReader(
+                        getResources().openRawResource(R.raw.key_en)));
+        object = element.getAsJsonObject();
+
+        for (String id : object.keySet()){
+            JsonElement _e = object.get(id);
+            QuestionViewModel vm = gson.fromJson(_e, QuestionViewModel.class);
+            _tmp.put(Integer.parseInt(id), vm);
+        }
+
+        return _tmp;
+    }
+
+    private HashMap<Integer, Intent> createIntents(){
+        HashMap<Integer, Intent> _tmp = new HashMap<>();
+        for (Integer i: questionViewModelDictionary.keySet()) {
+            Intent intent = new Intent(this, DoubleQuestionActivity.class);
+            intent.putExtra("id", i);
+            _tmp.put(i, intent);
+        }
+        return _tmp;
     }
 
     @Override
@@ -47,8 +95,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     break;
                 }
             case R.id.StartBtn:
-                Intent intent = new Intent(this,DichoActivity.class);
-                startActivity(intent);
+                startActivity(questionIntents.get(0));
                 break;
         }
     }
