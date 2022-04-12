@@ -66,13 +66,24 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
 
     private HashMap<Integer, Intent> createIntents(){
-        HashMap<Integer, Intent> _tmp = new HashMap<>();
+        HashMap<Integer, Intent> map = new HashMap<>();
         for (Integer i: questionViewModelDictionary.keySet()) {
-            Intent intent = new Intent(this, DoubleQuestionActivity.class);
+            QuestionViewModel __tmp = questionViewModelDictionary.get(i);
+            Intent intent;
+            if(__tmp.question3description != null){
+                intent = new Intent(this, TripleQuestionActivity.class);
+            }
+            else if(__tmp.description != null){
+                // answer model
+                intent = new Intent(this, DoubleQuestionActivity.class);
+            }
+            else{
+                intent = new Intent(this, DoubleQuestionActivity.class);
+            }
             intent.putExtra("id", i);
-            _tmp.put(i, intent);
+            map.put(i, intent);
         }
-        return _tmp;
+        return map;
     }
 
     @Override
