@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -74,8 +75,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 intent = new Intent(this, TripleQuestionActivity.class);
             }
             else if(__tmp.description != null){
-                // answer model
-                intent = new Intent(this, DoubleQuestionActivity.class);
+                intent = new Intent(this, AnswerActivity.class);
             }
             else{
                 intent = new Intent(this, DoubleQuestionActivity.class);

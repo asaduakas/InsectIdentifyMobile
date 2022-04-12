@@ -1,10 +1,12 @@
 package com.example.insectidentify;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
@@ -18,6 +20,14 @@ public class DoubleQuestionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_double_question);
+        //TOOLBAR SETUP
+        Toolbar thisToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(thisToolbar);
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayShowTitleEnabled(true);
+        ab.setHomeButtonEnabled(true);
+        ab.setDisplayHomeAsUpEnabled(true);
 
         ActivityDoubleQuestionBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_double_question);
         Bundle b = getIntent().getExtras();
@@ -30,6 +40,7 @@ public class DoubleQuestionActivity extends AppCompatActivity {
         question2button.setOnClickListener(this::onButton2Click);
     }
 
+
     private void onButton1Click(View v){
         startActivity(MainActivity.questionIntents.get(_vm.question1reference));
     }
@@ -38,15 +49,11 @@ public class DoubleQuestionActivity extends AppCompatActivity {
         startActivity(MainActivity.questionIntents.get(_vm.question2reference));
     }
 
-//    @Override
-//    public void onClick(View v){
-//        switch (v.getId()){
-//            case R.id.question1button:
-//                startActivity(MainActivity.questionIntents.get(_vm.question1reference));
-//                break;
-//            case R.id.question2button:
-//                startActivity(MainActivity.questionIntents.get(_vm.question2reference));
-//                break;
-//        }
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
 }
