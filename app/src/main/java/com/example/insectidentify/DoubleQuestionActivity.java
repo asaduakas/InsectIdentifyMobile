@@ -22,7 +22,7 @@ public class DoubleQuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_double_question);
         //TOOLBAR SETUP
-        Toolbar thisToolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar thisToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(thisToolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayShowTitleEnabled(true);
