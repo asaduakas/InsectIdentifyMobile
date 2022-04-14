@@ -52,8 +52,8 @@ public class TripleQuestionActivity extends AppCompatActivity{
                 "drawable", this.getPackageName());
     }
 
-    @BindingAdapter("imgSrc")
-    public static void imgSrc(ImageView imageView, String resName){
+    @BindingAdapter("imgSrc2")
+    public static void imgSrc2(ImageView imageView, String resName){
         if (resName.contains("_1"))
             imageView.setImageResource(q1ID);
         else if (resName.contains("_2"))

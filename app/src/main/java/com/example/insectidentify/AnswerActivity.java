@@ -43,13 +43,12 @@ public class AnswerActivity extends AppCompatActivity {
         saveBtn.setOnClickListener(this::onButtonSaveClick);
 
         qID = this.getResources().getIdentifier(_vm.getImage(),
-                "drawable", this.getPackageName());
+               "drawable", this.getPackageName());
     }
 
-    @BindingAdapter("imgSrc")
-    public static void imgSrc(ImageView imageView, String resName){
-        if(!resName.contains("p"))
-            imageView.setImageResource(qID);
+    @BindingAdapter("imgSrc3")
+    public static void imgSrc3(ImageView imageView, String resName){
+        imageView.setImageResource(qID);
     }
 
     private void onButtonRestartClick(View v){
