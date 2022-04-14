@@ -3,12 +3,15 @@ package com.example.insectidentify;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
 
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.insectidentify.databinding.ActivityDoubleQuestionBinding;
 
@@ -16,6 +19,7 @@ public class DoubleQuestionActivity extends AppCompatActivity {
 
     private Button question1button, question2button;
     private QuestionViewModel _vm;
+    private static int q1ID, q2ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +42,20 @@ public class DoubleQuestionActivity extends AppCompatActivity {
         question2button = findViewById(R.id.question2button);
         question1button.setOnClickListener(this::onButton1Click);
         question2button.setOnClickListener(this::onButton2Click);
+
+        q1ID = this.getResources().getIdentifier(_vm.getQuestion1image(),
+                "drawable", this.getPackageName());
+        q2ID = this.getResources().getIdentifier(_vm.getQuestion2image(),
+                "drawable", this.getPackageName());
     }
 
+    @BindingAdapter("imgSrc")
+    public static void imgSrc(ImageView imageView, String resName){
+        if (resName.contains("_1"))
+            imageView.setImageResource(q1ID);
+        else
+            imageView.setImageResource(q2ID);
+    }
 
     private void onButton1Click(View v){
         startActivity(MainActivity.questionIntents.get(_vm.question1reference));

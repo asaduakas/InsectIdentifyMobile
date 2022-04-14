@@ -21,6 +21,7 @@
 
     <TextView
         android:id="@+id/textView4"
+        style="@style/MainTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@{vm.title}"
@@ -51,16 +52,17 @@
                     android:layout_height="0dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginEnd="32dp"
+                    app:imgSrc="@{vm.question1image}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="w,1:1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/arachnida" />
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textView3"
+                style="@style/SmallAnswerTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -68,6 +70,7 @@
 
             <Button
                 android:id="@+id/question1button"
+                style="@style/diButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{vm.question1button}"
@@ -84,16 +87,17 @@
                     android:layout_height="0dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginEnd="32dp"
+                    app:imgSrc="@{vm.question2image}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="w,1:1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/arachnida" />
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textView5"
+                style="@style/SmallAnswerTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -101,6 +105,7 @@
 
             <Button
                 android:id="@+id/question2button"
+                style="@style/diButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{vm.question2button}"
@@ -117,16 +122,17 @@
                     android:layout_height="0dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginEnd="32dp"
+                    app:imgSrc="@{vm.question3image}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="w,1:1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/arachnida" />
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textView6"
+                style="@style/SmallAnswerTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -134,6 +140,7 @@
 
             <Button
                 android:id="@+id/question3button"
+                style="@style/diButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

@@ -19,6 +19,7 @@
 
     <TextView
         android:id="@+id/textView7"
+        style="@style/SmallAnswerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
@@ -29,6 +30,7 @@
 
     <TextView
         android:id="@+id/textView8"
+        style="@style/MainTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
@@ -42,14 +44,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
+        app:imgSrc="@{vm.image}"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:srcCompat="@drawable/arachnida" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -68,6 +69,7 @@
 
         <Button
             android:id="@+id/saveBtn"
+            style="@style/fillButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -75,6 +77,7 @@
 
         <Button
             android:id="@+id/restartBtn"
+            style="@style/empButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

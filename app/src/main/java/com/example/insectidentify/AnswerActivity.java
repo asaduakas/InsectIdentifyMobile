@@ -3,12 +3,14 @@ package com.example.insectidentify;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.insectidentify.databinding.ActivityAnswerBinding;
 
@@ -16,6 +18,7 @@ public class AnswerActivity extends AppCompatActivity {
 
     private Button restartBtn, saveBtn;
     private QuestionViewModel _vm;
+    private static int qID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,15 @@ public class AnswerActivity extends AppCompatActivity {
         saveBtn = findViewById(R.id.saveBtn);
         restartBtn.setOnClickListener(this::onButtonRestartClick);
         saveBtn.setOnClickListener(this::onButtonSaveClick);
+
+        qID = this.getResources().getIdentifier(_vm.getImage(),
+                "drawable", this.getPackageName());
+    }
+
+    @BindingAdapter("imgSrc")
+    public static void imgSrc(ImageView imageView, String resName){
+        if(!resName.contains("p"))
+            imageView.setImageResource(qID);
     }
 
     private void onButtonRestartClick(View v){
