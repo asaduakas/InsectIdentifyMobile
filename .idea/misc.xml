@@ -19,7 +19,7 @@
         <entry key="app/src/main/res/layout/activity_double_question.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19630085713154566" />
         <entry key="app/src/main/res/layout/activity_login2.xml" value="0.1358108108108108" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.16112019306904557" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_mouthpart.xml" value="0.18576965332031237" />
         <entry key="app/src/main/res/layout/activity_triple_question.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_wings.xml" value="0.16156616210937497" />
@@ -32,6 +32,7 @@
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.1358108108108108" />
         <entry key="app/src/main/res/layout/toolbar_main.xml" value="0.2144747759844806" />
         <entry key="app/src/main/res/menu/menu_main.xml" value="0.20554199218750002" />
+        <entry key="app/src/main/res/menu/nav_menu.xml" value="0.12861842105263158" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/logo.xml" value="0.1595" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/logo_round.xml" value="0.2165" />
       </map>

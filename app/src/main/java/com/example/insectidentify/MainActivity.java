@@ -1,11 +1,15 @@
 package com.example.insectidentify;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -29,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     Button logInBtn;
     Button startBtn;
     String status = "notLoggedIn";
+    public DrawerLayout drawerLayout;
+    public ActionBarDrawerToggle actionBarDrawerToggle;
 
     public static HashMap<Integer, Intent> questionIntents;
     public static HashMap<Integer, QuestionViewModel> questionViewModelDictionary;
@@ -37,11 +43,22 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        logInBtn = findViewById(R.id.LogInBtn);
-        logInBtn.setOnClickListener(this);
         startBtn = findViewById(R.id.StartBtn);
         startBtn.setOnClickListener(this);
 
+        //Nav Bar setup
+        // drawer layout instance to toggle the menu icon to open
+        // drawer and back button to close drawer
+        drawerLayout = findViewById(R.id.drawer_layout);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
+        // pass the Open and Close toggle for the drawer layout listener
+        // to toggle the button
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+        // to make the Navigation drawer icon always appear on the action bar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setElevation(0);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         questionViewModelDictionary = createModels();
         questionIntents = createIntents();
     }
@@ -89,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     @Override
     public  void onClick(View v){
         switch (v.getId()){
-            case R.id.LogInBtn:
+            /*case R.id.LogInBtn:
                 if(this.status.equals("notLoggedIn")){
                     Intent intent = new Intent(this, LoginActivity.class);
                     startActivity(intent);
@@ -97,14 +114,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 }
                 else if(this.status.equals("loggedIn")){
                     logInBtn.setText(R.string.logIn);
-                    this.status = "notLoggedIn";
-                    TextView statusBar = findViewById(R.id.status);
-                    statusBar.setText(R.string.statusEmpty);
                     //Log out from database
-                    Snackbar confirmationMessage = Snackbar.make(findViewById(R.id.LogInBtn), "Signed out successfully!", BaseTransientBottomBar.LENGTH_LONG);
-                    confirmationMessage.show();
+                    //Snackbar confirmationMessage = Snackbar.make(findViewById(R.id.LogInBtn), "Signed out successfully!", BaseTransientBottomBar.LENGTH_LONG);
+                    //confirmationMessage.show();
                     break;
-                }
+                }*/
             case R.id.StartBtn:
                 startActivity(questionIntents.get(0));
                 break;
@@ -112,19 +126,28 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
 
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public void onResume(){
         super.onResume();
-        TextView statusBar = findViewById(R.id.status);
+        //TextView statusBar = findViewById(R.id.status);
         Intent intent = getIntent();
         String receivedStatus = intent.getStringExtra("status");
         if(receivedStatus != null){
             if(receivedStatus.equals("admin")){
-                statusBar.setText(R.string.statusAdmin);
+                //statusBar.setText(R.string.statusAdmin);
                 this.status = "loggedIn";
                 logInBtn.setText(R.string.logOut);
             }
             else if (receivedStatus.equals("default")){
-                statusBar.setText(R.string.statusDefault);
+               // statusBar.setText(R.string.statusDefault);
                 this.status = "loggedIn";
                 logInBtn.setText(R.string.logOut);
             }
