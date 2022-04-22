@@ -15,6 +15,11 @@
         <item name="android:background">@color/lightBackground</item>
     </style>
 
+    <style name="exposedDropdown" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@color/lightBlack</item>
+        <item name="boxStrokeWidth">1dp</item>
+    </style>
+
     <!-- Main TextView style. -->
     <style name="MainTextView" parent="@style/Theme.Material3.Light">
         <item name="android:fontFamily">@font/inter</item>
@@ -72,6 +77,8 @@
         <item name="android:fontFamily">@font/inter</item>
         <item name="backgroundTint">@color/lightBackground</item>
         <item name="android:textColor">@color/lightBlack</item>
+        <item name="colorOutline">@color/lightBlack</item>
+        <item name="boxStrokeWidth">1dp</item>
     </style>
 
     <!--- Question buttons style. -->

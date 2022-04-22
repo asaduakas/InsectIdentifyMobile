@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/nav_account"
-        android:title="My Account" />
+        android:id="@+id/nav_darkMode"
+        android:title="@string/darkMode"
+        android:icon="@drawable/ic_dark_mode_black_48dp"/>
 
     <item
-        android:id="@+id/nav_settings"
-        android:title="Settings" />
+        android:id="@+id/nav_lang"
+        android:title="@string/lang"
+        android:icon="@drawable/ic_translate_black_48dp"/>
 
     <item
         android:id="@+id/nav_logout"
-        android:title="Logout" />
+        android:title="@string/logOut"
+        android:icon="@drawable/ic_logout_black_48dp"/>
 </menu>

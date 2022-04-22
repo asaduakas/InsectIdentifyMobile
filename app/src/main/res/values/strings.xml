@@ -28,5 +28,34 @@
     <string name="home">Home</string>
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
+    <string name="darkMode">Dark Mode</string>
+    <string name="lang">EN</string>
+
+    <!-- Dropdowns-->
+    <string name="trapMethod">Trapping Method</string>
+    <string name="catchTime">Catch Time</string>
+    <string name="field">Field</string>
+    <string name="sDate">Starting Date</string>
+    <string name="sTime">Starting Time</string>
+    <string name="dataTitle">Data Entry</string>
+    <string name="date">dd/mm/yy</string>
+    <string name="time">HH:MM</string>
+
+    <string-array name="trapMethods">
+        <item>LF</item>
+        <item>LFC</item>
+        <item>C</item>
+        <item>E</item>
+    </string-array>
+
+    <string-array name="catchTime">
+        <item>D</item>
+        <item>N</item>
+    </string-array>
+
+    <string-array name="field">
+        <item>W</item>
+        <item>E</item>
+    </string-array>
 
 </resources>

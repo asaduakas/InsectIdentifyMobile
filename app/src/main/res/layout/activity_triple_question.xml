@@ -13,12 +13,6 @@
     android:layout_height="match_parent"
     tools:context=".TripleQuestionActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar_main"
-        android:layout_width="match_parent"
-        android:layout_height="60dp" />
-
     <TextView
         android:id="@+id/textView4"
         style="@style/MainTextView"
@@ -77,6 +71,13 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/darker_gray"
+                android:elevation="20dp"
+                android:layout_marginBottom="10dp"/>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -111,6 +112,13 @@
                 android:text="@{vm.question2button}"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/darker_gray"
+                android:elevation="20dp"
+                android:layout_marginBottom="10dp"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

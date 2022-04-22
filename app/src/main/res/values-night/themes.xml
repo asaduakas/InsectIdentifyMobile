@@ -12,34 +12,40 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/darkWhite</item>
     </style>
 
     <!-- Main TextView style. -->
-    <style name="MainTextView" parent="@style/Theme.Material3.Light">
+    <style name="MainTextView" parent="@style/Theme.Material3.Dark">
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/lightBlack</item>
+        <item name="android:textColor">@color/darkWhite</item>
         <item name="android:textSize">42sp</item>
         <item name="android:textAlignment">center</item>
     </style>
 
     <!-- Answer Insect Name style. -->
-    <style name="AnswerTextView" parent="@style/Theme.Material3.Light">
+    <style name="AnswerTextView" parent="@style/Theme.Material3.Dark">
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/lightBlack</item>
+        <item name="android:textColor">@color/darkWhite</item>
         <item name="android:textSize">42sp</item>
         <item name="android:textAlignment">center</item>
     </style>
 
     <!-- Small Answer style. -->
-    <style name="SmallAnswerTextView" parent="@style/Theme.Material3.Light">
+    <style name="SmallAnswerTextView" parent="@style/Theme.Material3.Dark">
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/lightBlack</item>
+        <item name="android:textColor">@color/darkWhite</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textAlignment">center</item>
     </style>
@@ -69,8 +75,8 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">@font/inter</item>
-        <item name="backgroundTint">@color/lightBackground</item>
-        <item name="android:textColor">@color/lightBlack</item>
+        <item name="backgroundTint">@android:color/darker_gray</item>
+        <item name="android:textColor">@color/darkWhite</item>
     </style>
 
     <!--- Question buttons style. -->

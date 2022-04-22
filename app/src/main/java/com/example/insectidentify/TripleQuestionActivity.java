@@ -6,8 +6,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -25,12 +27,9 @@ public class TripleQuestionActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_triple_question);
         //TOOLBAR SETUP
-        Toolbar thisToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(thisToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.mipmap.ic_launcher_foreground);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
-
+        getSupportActionBar().setElevation(0);
 
         ActivityTripleQuestionBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_triple_question);
         Bundle b = getIntent().getExtras();
@@ -72,6 +71,24 @@ public class TripleQuestionActivity extends AppCompatActivity{
 
     private void onButton3Click(View v){
         startActivity(MainActivity.questionIntents.get(_vm.question3reference));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_dicho, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_home) {// User chose the "Home" item, go to main page
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }else// If we got here, the user's action was not recognized.
+            // Invoke the superclass to handle it.
+            return super.onOptionsItemSelected(item);
     }
 
 

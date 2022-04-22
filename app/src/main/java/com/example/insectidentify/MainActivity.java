@@ -6,32 +6,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.TextView;
+
 import com.google.gson.*;
 
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.gson.stream.JsonReader;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Dictionary;
 import java.util.HashMap;
-import java.util.Hashtable;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
     Button logInBtn;
     Button startBtn;
+    Button dataBtn;
     String status = "notLoggedIn";
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
@@ -45,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         setContentView(R.layout.activity_main);
         startBtn = findViewById(R.id.StartBtn);
         startBtn.setOnClickListener(this);
+        dataBtn = findViewById(R.id.dataBtn);
+        dataBtn.setOnClickListener(this);
 
         //Nav Bar setup
         // drawer layout instance to toggle the menu icon to open
@@ -106,32 +98,36 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     @Override
     public  void onClick(View v){
         switch (v.getId()){
-            /*case R.id.LogInBtn:
-                if(this.status.equals("notLoggedIn")){
-                    Intent intent = new Intent(this, LoginActivity.class);
-                    startActivity(intent);
-                    break;
-                }
-                else if(this.status.equals("loggedIn")){
-                    logInBtn.setText(R.string.logIn);
-                    //Log out from database
-                    //Snackbar confirmationMessage = Snackbar.make(findViewById(R.id.LogInBtn), "Signed out successfully!", BaseTransientBottomBar.LENGTH_LONG);
-                    //confirmationMessage.show();
-                    break;
-                }*/
             case R.id.StartBtn:
                 startActivity(questionIntents.get(0));
                 break;
+            case R.id.dataBtn:
+                Intent intent = new Intent(this, DataActivity.class);
+                startActivity(intent);
         }
+        //TODO: Add snackbar popup message upon logging out
+        //Snackbar confirmationMessage = Snackbar.make(findViewById(R.id.LogInBtn), "Signed out successfully!", BaseTransientBottomBar.LENGTH_LONG);
+        //confirmationMessage.show();
     }
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
+        else if (item.getItemId() == R.id.action_login) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
     }
 
     @Override

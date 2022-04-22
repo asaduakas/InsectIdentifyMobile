@@ -1,20 +1,16 @@
 package com.example.insectidentify;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.databinding.BindingAdapter;
-import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
-
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.BindingAdapter;
+import androidx.databinding.DataBindingUtil;
 
 import com.example.insectidentify.databinding.ActivityDoubleQuestionBinding;
 
@@ -71,7 +67,7 @@ public class DoubleQuestionActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_dicho, menu);
         return true;
     }
 
@@ -82,8 +78,8 @@ public class DoubleQuestionActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }else// If we got here, the user's action was not recognized.
-        // Invoke the superclass to handle it.
-        return super.onOptionsItemSelected(item);
+            // Invoke the superclass to handle it.
+            return super.onOptionsItemSelected(item);
     }
 
 }

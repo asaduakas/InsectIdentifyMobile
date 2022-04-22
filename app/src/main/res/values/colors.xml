@@ -18,4 +18,5 @@
     <!-- Dark Theme Colors. -->
     <color name="darkBackground">#191919</color>
     <color name="darkBlue">#4069E5</color>
+    <color name="darkWhite">#EAEFED</color>
 </resources>

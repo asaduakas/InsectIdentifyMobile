@@ -1,665 +1,745 @@
 {
-  "0":{
-    "title":"Number of Legs",
-    "question1description":"Probably not a spider!",
-    "question2description":"Spiders, scorpions, and ticks only",
-    "question1image":"@drawable/p0_1",
-    "question2image":"@drawable/p0_2",
-    "question1button":"Not 8 legs",
-    "question2button":"8 legs",
-    "question1reference":1,
-    "question2reference":41,
-    "previousquestionreference":0,
-    "progress":9
+  "0": {
+    "title": "Number of Legs:",
+    "question1description": "Probably not a spider!",
+    "question2description": "Spiders, scorpions, and ticks only",
+    "question1image": "@drawable/p0_1",
+    "question2image": "@drawable/p0_2",
+    "question1button": "Not 8 legs",
+    "question2button": "8 legs",
+    "question1reference": 2,
+    "question2reference": 41,
+    "previousquestionreference": 0,
+    "progress": 0
   },
-  "1":{
-    "title":"Presence of Wings",
-    "question1description":"",
-    "question2description":"If it's a hard shell, press on the shell to see if it separates!",
-    "question1image":"@drawable/p1_1",
-    "question2image":"@drawable/p1_2",
-    "question1button":"Wings present",
-    "question2button":"Wings absent",
-    "question1reference":2,
-    "question2reference":42,
-    "previousquestionreference":0,
-    "progress":18
-  },
-  "2":{
-    "title":"Mouthpart",
-    "question1description":"Long straw-like mouth for piercing, sucking, or absorbing. Could be multiple straws",
-    "question2description":"Long, thin, and coiled",
-    "question3description":"Small mouth for chewing, or reduced",
-    "question1image":"@drawable/p2_1",
-    "question2image":"@drawable/p2_2",
-    "question3image":"@drawable/p2_3",
-    "question1button":"Straw like",
-    "question2button":"Coiled",
-    "question3button":"Chewing or reduced",
-    "question1reference":3,
-    "question2reference":14,
-    "question3reference":15,
-    "previousquestionreference":1,
-    "progress":30
-  },
-  "3":{
-    "title":"Number of Wings",
-    "question1description":"",
-    "question2description":"Hindwings can sometimes be transparent and hard to spot. Be careful!",
-    "question1image":"@drawable/p3_1",
-    "question2image":"@drawable/p3_2",
-    "question1button":"1 pair",
-    "question2button":"2 pairs",
-    "question1reference":4,
-    "question2reference":7,
-    "previousquestionreference":2,
-    "progress":57
-  },
-  "4":{
-    "title":"Length of Antennae",
-    "question1description":"",
-    "question2description":"",
-    "question1image":"@drawable/p4_1",
-    "question2image":"@drawable/p4_2",
-    "question1button":"Antennae are longer than head",
-    "question2button":"Antennae are shorter than head",
-    "question1reference":5,
-    "question2reference":6,
-    "previousquestionreference":3,
-    "progress":83
-  },
-  "5":{
-    "order":"Diptera",
-    "suborder": "Nematocera",
-    "image":"@drawable/p5",
-    "description":"",
-    "previousquestionreference":4,
-    "progress":100
-  },
-  "6":{
-    "order":"Diptera",
-    "suborder": "Brachycera",
-    "image":"@drawable/p6",
-    "description":"",
-    "previousquestionreference":4,
-    "progress":100
-  },
-  "14":{
-    "order":"Lepidoptera",
+  "1": {
+    "order": "Lepidoptera",
     "suborder": "",
-    "image":"@drawable/p14",
-    "description":"",
-    "previousquestionreference":2,
-    "progress":100
+    "image": "@drawable/p1",
+    "description": "",
+    "previousquestionreference": 23,
+    "progress": 100
   },
-  "7":{
-    "title":"Separation of Forewings",
-    "question1description":"",
-    "question2description":"",
-    "question1image":"@drawable/p7_1",
-    "question2image":"@drawable/p7_2",
-    "question1button":"Forewings are joint together",
-    "question2button":"Forewings are separated",
-    "question1reference":8,
-    "question2reference":11,
-    "previousquestionreference":3,
-    "progress":71
+  "2": {
+    "title": "Presence of Wings?",
+    "question1description": "If it's a hard shell, press on the shell (forcefully) to see if it separates into two halves!",
+    "question2description": "If it's a hard shell without wings, there won't be a line down the middle of the shell.'",
+    "question1image": "@drawable/p2_1",
+    "question2image": "@drawable/p2_2",
+    "question1button": "Wings present",
+    "question2button": "Wings absent",
+    "question1reference": 3,
+    "question2reference": 42,
+    "previousquestionreference": 0,
+    "progress": 0
   },
-  "8":{
-    "title":"Segmentation of Tarsi",
-    "question1description":"Tarsi locate at the end of the legs",
-    "question2description":"Tarsi locate at the end of the legs",
-    "question1image":"@drawable/p8_1",
-    "question2image":"@drawable/p8_2",
-    "question1button":"1-2 segmented tarsi",
-    "question2button":"three or more segmented tarsi",
-    "question1reference":9,
-    "question2reference":10,
-    "previousquestionreference":7,
-    "progress":86
+  "3": {
+    "title": "Texture of wings:",
+    "question1description": "A hardened front wing can sometimes be transparent.",
+    "question2description": "Wings are flexible",
+    "question1image": "@drawable/p3_1",
+    "question2image": "@drawable/p3_2",
+    "question1button": "Shell/phardened front wing",
+    "question2button": "Not shell like front wings",
+    "question1reference": 4,
+    "question2reference": 10,
+    "previousquestionreference": 2,
+    "progress": 0
   },
-  "9":{
-    "order":"Hemiptera",
-    "suborder": "Sternorrhyncha",
-    "image":"@drawable/p9",
-    "description":"",
-    "previousquestionreference":8,
-    "progress":100
+  "4": {
+    "title": "Is the wing reduced?",
+    "question1description": "A 'reduced' wing is too short to cover the abdomen.",
+    "question2description": "Normal wings are larger than the abdomen and usually prominent.",
+    "question1image": "@drawable/p4_1",
+    "question2image": "@drawable/p4_2",
+    "question1button": "Yes",
+    "question2button": "No",
+    "question1reference": 26,
+    "question2reference": 5,
+    "previousquestionreference": 3,
+    "progress": 0
   },
-  "10":{
-    "order":"Hemiptera",
-    "suborder": "Auchenorrhyncha",
-    "image":"@drawable/p10",
-    "description":"",
-    "previousquestionreference":8,
-    "progress":100
+  "5": {
+    "title": "Size & Location of front wings:",
+    "question1description": "The shell or hardened front wing fully covers the body (from top view). The insect also doesn't have a visible dorsal triangle.",
+    "question2description": "The end of the wing is transparent. The front wing only partially covers the body and/or the insect may have a dorsal triangle.",
+    "question1image": "@drawable/p5_1",
+    "question2image": "@drawable/p5_2",
+    "question1button": "Covering & No triangle",
+    "question2button": "Partially covering/Triangle",
+    "question1reference": 6,
+    "question2reference": 7,
+    "previousquestionreference": 4,
+    "progress": 0
   },
-  "11":{
-    "title":"Body Shape",
-    "question1description":"Head is smaller than body. Legs are thin.",
-    "question2description":"Head has the same width as body. Legs look like paddles for swimming in water.",
-    "question1image":"@drawable/p11_1",
-    "question2image":"@drawable/p11_2",
-    "question1button":"Head is smaller",
-    "question2button":"Head is same width as body",
-    "question1reference":12,
-    "question2reference":13,
-    "previousquestionreference":7,
-    "progress":86
+  "6": {
+    "title": "Head and body shape:",
+    "question1description": "An oval body shape with wide legs.",
+    "question2description": "The head and body are segmented with thin legs.",
+    "question1image": "@drawable/p6_1",
+    "question2image": "@drawable/p6_2",
+    "question1button": "Oval Body",
+    "question2button": "Segmented Body",
+    "question1reference": 27,
+    "question2reference": 28,
+    "previousquestionreference": 5,
+    "progress": 0
   },
-  "12":{
-    "order":"Heteroptera",
-    "suborder": "Terrestrial",
-    "image":"@drawable/p12",
-    "description":"",
-    "previousquestionreference":11,
-    "progress":100
+  "7": {
+    "title": "Separation of Forewings:",
+    "question1description": "Wings are parallel to each other.",
+    "question2description": "The wing roots (joint) are far separated from each other and the wing tips are overlapping.",
+    "question1image": "@drawable/p7_1",
+    "question2image": "@drawable/p7_2",
+    "question1button": "Forewings are parallel",
+    "question2button": "Forewings are separated",
+    "question1reference": 8,
+    "question2reference": 9,
+    "previousquestionreference": 5,
+    "progress": 0
   },
-  "13":{
-    "order":"Heteroptera",
-    "suborder": "Aquatic",
-    "image":"@drawable/p13",
-    "description":"",
-    "previousquestionreference":11,
-    "progress":100
+  "8": {
+    "title": "Segmentation of Tarsi:",
+    "question1description": "Tarsi can be found at the very end of the legs. You should count one or two segments at the tip.",
+    "question2description": "The insect has three or more (generally small, so be careful) segments on the tarsi.",
+    "question1image": "@drawable/p8_1",
+    "question2image": "@drawable/p8_2",
+    "question1button": "1-2 segments",
+    "question2button": "3+ segments",
+    "question1reference": 29,
+    "question2reference": 30,
+    "previousquestionreference": 7,
+    "progress": 0
   },
-  "15":{
-    "title":"Texture of Wings",
-    "question1description":"",
-    "question2description":"",
-    "question1image":"@drawable/p15_1",
-    "question2image":"@drawable/p15_2",
-    "question1button":"Shell like front wings",
-    "question2button":"Not shell like front wings",
-    "question1reference":16,
-    "question2reference":21,
-    "previousquestionreference":2,
-    "progress":40
+  "9": {
+    "title": "Head and body shape:",
+    "question1description": "Head is connected to body (has the same width) with paddle-like legs for moving on the water.",
+    "question2description": "The head and body are separated or vastly different sizes (not hydrodynamic), with thinner legs for walking on land.",
+    "question1image": "@drawable/p9_1",
+    "question2image": "@drawable/p9_2",
+    "question1button": "Same width or connected head",
+    "question2button": "Disconnected or small head",
+    "question1reference": 31,
+    "question2reference": 32,
+    "previousquestionreference": 7,
+    "progress": 0
   },
-  "16":{
-    "title":"Presence of Cerci",
-    "question1description":"Cerci are at the bottom of the insect. Almost like tails.",
-    "question2description":"Cerci are at the bottom of the insect. Almost like tails.",
-    "question1image":"@drawable/p16_1",
-    "question2image":"@drawable/p16_2",
-    "question1button":"Cerci Present",
-    "question2button":"Cerci Absent",
-    "question1reference":17,
-    "question2reference":18,
-    "previousquestionreference":15,
-    "progress":71
+  "10": {
+    "title": "Presence of hair on wings:",
+    "question1description": "Scales can sometimes appear like hair, ensure the focus is set appropriately.",
+    "question2description": "Hair can grow both on the surface (covering) the wing and/por on the tips of the wings, protruding like whiskers.",
+    "question1image": "@drawable/p10_1",
+    "question2image": "@drawable/p10_2",
+    "question1button": "No hair",
+    "question2button": "Hair on wings",
+    "question1reference": 12,
+    "question2reference": 11,
+    "previousquestionreference": 3,
+    "progress": 0
   },
-  "17":{
-    "order":"Dermaptera",
+  "11": {
+    "title": "Wing type and area:",
+    "question1description": "Thin wings with hair resembling a bird feather.",
+    "question2description": "Thicker, not feather-like wings",
+    "question1image": "@drawable/p11_1",
+    "question2image": "@drawable/p11_2",
+    "question1button": "Feather-like wings",
+    "question2button": "Not feather-like wings",
+    "question1reference": 63,
+    "question2reference": 21,
+    "previousquestionreference": 10,
+    "progress": 0
+  },
+  "12": {
+    "title": "Pairs of wings:",
+    "question1description": "A single (visible) pair of wings.",
+    "question2description": "A total of 4 wings (2 pairs). Should be easy to find.",
+    "question1image": "@drawable/p12_1",
+    "question2image": "@drawable/p12_2",
+    "question1button": "1 Pair",
+    "question2button": "2 Pairs",
+    "question1reference": 13,
+    "question2reference": 15,
+    "previousquestionreference": 10,
+    "progress": 0
+  },
+  "13": {
+    "title": "Length of Cerci:",
+    "question1description": "Cerci can sometimes be broken off! Ensure both cerci are the same size. Short cerci will generally be thick and blunt at the tip.",
+    "question2description": "Cerci are longer or an equivalent length to the body. They will also be thin and are easily broken.",
+    "question1image": "@drawable/p13_1",
+    "question2image": "@drawable/p13_2",
+    "question1button": "Missing or short cerci",
+    "question2button": "Long & thin cerci",
+    "question1reference": 14,
+    "question2reference": 35,
+    "previousquestionreference": 12,
+    "progress": 0
+  },
+  "14": {
+    "title": "Size of antennae:",
+    "question1description": "Antannae are longer than the head and will also be thinner.",
+    "question2description": "Antennae are shorter than the head. They will be thick and more stubby.",
+    "question1image": "@drawable/p14_1",
+    "question2image": "@drawable/p14_2",
+    "question1button": "Long Antennae",
+    "question2button": "Short Antennae",
+    "question1reference": 33,
+    "question2reference": 34,
+    "previousquestionreference": 13,
+    "progress": 0
+  },
+  "15": {
+    "title": "Comparative wing size:",
+    "question1description": "Front and hind wings are roughly the same size.",
+    "question2description": "The two pairs of wings have a significantly different size or shape to each other.",
+    "question1image": "@drawable/p15_1",
+    "question2image": "@drawable/p15_2",
+    "question1button": "Same size",
+    "question2button": "Different size",
+    "question1reference": 16,
+    "question2reference": 17,
+    "previousquestionreference": 12,
+    "progress": 0
+  },
+  "16": {
+    "title": "Size of antennae:",
+    "question1description": "Antennae are longer than the head and will also be thinner.",
+    "question2description": "Antennae are shorter than the head. They will be thick and more stubby.",
+    "question1image": "@drawable/p16_1",
+    "question2image": "@drawable/p16_2",
+    "question1button": "Long antennae",
+    "question2button": "Short not present",
+    "question1reference": 19,
+    "question2reference": 40,
+    "previousquestionreference": 15,
+    "progress": 0
+  },
+  "17": {
+    "title": "Wing shapes:",
+    "question1description": "Wings are roughly the same shape.",
+    "question2description": "Hind (rear) wings are wider than the front wings.",
+    "question1image": "@drawable/p17_1",
+    "question2image": "@drawable/p17_2",
+    "question1button": "Same shape",
+    "question2button": "Wider hind wings",
+    "question1reference": 18,
+    "question2reference": 64,
+    "previousquestionreference": 15,
+    "progress": 0
+  },
+  "18": {
+    "title": "Length of Cerci:",
+    "question1description": "Cerci can sometimes be broken off! Ensure both cerci are the same size. Short cerci will generally be thick and blunt at the tip.",
+    "question2description": "Cerci are longer or an equivalent length to the body. They will also be thin and are easily broken.",
+    "question1image": "@drawable/p18_1",
+    "question2image": "@drawable/p18_2",
+    "question1button": "Missing or short cerci",
+    "question2button": "Long & thin cerci",
+    "question1reference": 20,
+    "question2reference": 65,
+    "previousquestionreference": 17,
+    "progress": 0
+  },
+  "19": {
+    "title": "Wing appearance:",
+    "question1description": "Wings tend to curl around the body (lengthwise). The end of the wings will be wider and somewhat rounded.",
+    "question2description": "Wings will appear flat and not curled around the body. The end of the wings will be slim and more pointy.",
+    "question1image": "@drawable/p19_1",
+    "question2image": "@drawable/p19_2",
+    "question1button": "Wide hind wings",
+    "question2button": "Slim hind wings",
+    "question1reference": 36,
+    "question2reference": 37,
+    "previousquestionreference": 16,
+    "progress": 0
+  },
+  "20": {
+    "title": "Segmentation of Tarsi:",
+    "question1description": "Tarsi can be found at the very end of the legs. You should count two or three segments at the tip.",
+    "question2description": "The insect has four or more (generally small, so be careful) segments on the tarsi.",
+    "question1image": "@drawable/p20_1",
+    "question2image": "@drawable/p20_2",
+    "question1button": "2-3 segments",
+    "question2button": "4+ segments",
+    "question1reference": 38,
+    "question2reference": 39,
+    "previousquestionreference": 18,
+    "progress": 0
+  },
+  "21": {
+    "title": "Mouthpart:",
+    "question1description": "Search carefully for the proboscis, it can be covered by hair which grows on the head.",
+    "question2description": "No visible proboscis. Be sure to rotate the insect around to search under the chin, as it can be hidden underneath.",
+    "question1image": "@drawable/p21_1",
+    "question2image": "@drawable/p21_2",
+    "question1button": "Coiled proboscis",
+    "question2button": "No proboscis",
+    "question1reference": 66,
+    "question2reference": 22,
+    "previousquestionreference": 11,
+    "progress": 0
+  },
+  "22": {
+    "title": "Location of hair:",
+    "question1description": "Hair protrudes from the edge of the wings (similar to whiskers). Focus the microscope to ensure hair doesn't cover the wing.",
+    "question2description": "Hair is covering the flat surface over the entirety of the wings. Hair will also grow from the edge of the wing.",
+    "question1image": "@drawable/p22_1",
+    "question2image": "@drawable/p22_2",
+    "question1button": "On the edge of the wings",
+    "question2button": "All over the wings",
+    "question1reference": 23,
+    "question2reference": 24,
+    "previousquestionreference": 21,
+    "progress": 0
+  },
+  "23": {
+    "title": "Scales on wings:",
+    "question1description": "Wings are covered in scales. You can scrape lightly on the wings - if scales are present they will flake off.",
+    "question2description": "Wings do not have scales. Zoom in with the microscope & use light if you aren't sure.",
+    "question1image": "@drawable/p23_1",
+    "question2image": "@drawable/p23_2",
+    "question1button": "Scales on wings",
+    "question2button": "No scales",
+    "question1reference": 1,
+    "question2reference": 25,
+    "previousquestionreference": 22,
+    "progress": 0
+  },
+  "24": {
+    "title": "Wing shape:",
+    "question1description": "Wings are pointed, resembling a more triangular shape.",
+    "question2description": "Wing appear rounded off at the tip.",
+    "question1image": "@drawable/p24_1",
+    "question2image": "@drawable/p24_2",
+    "question1button": "Pointed",
+    "question2button": "Rounded off",
+    "question1reference": 69,
+    "question2reference": 70,
+    "previousquestionreference": 22,
+    "progress": 0
+  },
+  "25": {
+    "title": "Size of antennae:",
+    "question1description": "Antannae are longer than the head and will also be thinner.",
+    "question2description": "Antennae are shorter than the head. They will be thick and more stubby.",
+    "question1image": "@drawable/p25_1",
+    "question2image": "@drawable/p25_2",
+    "question1button": "Long antannae",
+    "question2button": "Short or not visible",
+    "question1reference": 67,
+    "question2reference": 68,
+    "previousquestionreference": 23,
+    "progress": 0
+  },
+  "26": {
+    "order": "Dermaptera",
     "suborder": "",
-    "image":"@drawable/p17",
-    "description":"",
-    "previousquestionreference":15,
-    "progress":100
+    "image": "@drawable/p26",
+    "description": "",
+    "previousquestionreference": 4,
+    "progress": 100
   },
-  "18":{
-    "title":"Body Shape",
-    "question1description":"Body is oval shape. Head and body are the same width. Wide legs for paddling in water.",
-    "question2description":"Head and body are separated. Legs are thin for running.",
-    "question1image":"@drawable/p18_1",
-    "question2image":"@drawable/p18_2",
-    "question1button":"Oval body shape",
-    "question2button":"Segmented body shape",
-    "question1reference":19,
-    "question2reference":20,
-    "previousquestionreference":18,
-    "progress":86
+  "27": {
+    "order": "Coleoptera",
+    "suborder": "Dytiscidae (Aquatic Coleoptera)",
+    "image": "@drawable/p27",
+    "description": "",
+    "previousquestionreference": 6,
+    "progress": 100
   },
-  "19":{
-    "order":"Coleoptera",
-    "suborder": "Dytiscidae",
-    "image":"@drawable/p19",
-    "description":"",
-    "previousquestionreference":18,
-    "progress":100
-  },
-  "20":{
-    "order":"Coleoptera",
+  "28": {
+    "order": "Coleoptera",
     "suborder": "Terrestrial Coleoptera",
-    "image":"@drawable/p20",
-    "description":"",
-    "previousquestionreference":18,
-    "progress":100
+    "image": "@drawable/p28",
+    "description": "",
+    "previousquestionreference": 6,
+    "progress": 100
   },
-  "21":{
-    "title":"Hair on Wings",
-    "question1description":"There are hair on top or on the end of the wings",
-    "question2description":"No hair anywhere on the wings",
-    "question1image":"@drawable/p21_1",
-    "question2image":"@drawable/p21_2",
-    "question1button":"Hair present",
-    "question2button":"Hair absent",
-    "question1reference":22,
-    "question2reference":29,
-    "previousquestionreference":15,
-    "progress":50
+  "29": {
+    "order": "Hemiptera",
+    "suborder": "Sternorrhyncha",
+    "image": "@drawable/p29",
+    "description": "",
+    "previousquestionreference": 8,
+    "progress": 100
   },
-  "22":{
-    "title":"Location of Hair",
-    "question1description":"",
-    "question2description":"",
-    "question1image":"@drawable/p22_1",
-    "question2image":"@drawable/p22_2",
-    "question1button":"Hair covering surface of wings (including the end)",
-    "question2button":"Hair only on the end of wings",
-    "question1reference":23,
-    "question2reference":26,
-    "previousquestionreference":21,
-    "progress":75
+  "30": {
+    "order": "Hemiptera",
+    "suborder": "Auchenorrhyncha",
+    "image": "@drawable/p30",
+    "description": "",
+    "previousquestionreference": 8,
+    "progress": 100
   },
-  "23":{
-    "title":"Wing Shape",
-    "question1description":"The of the wings are pointed, form a triangle",
-    "question2description":"Wings are rounded",
-    "question1image":"@drawable/p23_1",
-    "question2image":"@drawable/p23_2",
-    "question1button":"Pointed wings",
-    "question2button":"Rounded wings",
-    "question1reference":24,
-    "question2reference":25,
-    "previousquestionreference":23,
-    "progress":88
+  "31": {
+    "order": "Heteroptera",
+    "suborder": "Aquatic Heteroptera",
+    "image": "@drawable/p31",
+    "description": "",
+    "previousquestionreference": 9,
+    "progress": 100
   },
-  "24":{
-    "order":"Lepidoptera",
-    "suborder": "Microlepidoptera",
-    "image":"@drawable/p24",
-    "description":"",
-    "previousquestionreference":23,
-    "progress":100
+  "32": {
+    "order": "Heteroptera",
+    "suborder": "Terrestrial Heteroptera",
+    "image": "@drawable/p32",
+    "description": "",
+    "previousquestionreference": 9,
+    "progress": 100
   },
-  "25":{
-    "order":"Trichoptera",
+  "33": {
+    "order": "Diptera",
+    "suborder": "Nematocera",
+    "image": "@drawable/p33",
+    "description": "",
+    "previousquestionreference": 14,
+    "progress": 100
+  },
+  "34": {
+    "order": "Diptera",
+    "suborder": "Brachycera",
+    "image": "@drawable/p34",
+    "description": "",
+    "previousquestionreference": 14,
+    "progress": 100
+  },
+  "35": {
+    "order": "Ephemeroptera",
     "suborder": "",
-    "image":"@drawable/p25",
-    "description":"",
-    "previousquestionreference":23,
-    "progress":100
+    "image": "@drawable/p35",
+    "description": "",
+    "previousquestionreference": 13,
+    "progress": 100
   },
-  "26":{
-    "title":"Scale on Wings",
-    "question1description":"",
-    "question2description":"",
-    "question1image":"@drawable/p26_1",
-    "question2image":"@drawable/p26_2",
-    "question1button":"Wings are textured with scales",
-    "question2button":"No scales on wings",
-    "question1reference":27,
-    "question2reference":28,
-    "previousquestionreference":26,
-    "progress":88
-  },
-  "27":{
-    "order":"Lepidoptera",
+  "36": {
+    "order": "Neuroptera",
     "suborder": "",
-    "image":"@drawable/p27",
-    "description":"",
-    "previousquestionreference":26,
-    "progress":100
+    "image": "@drawable/p36",
+    "description": "",
+    "previousquestionreference": 19,
+    "progress": 100
   },
-  "28":{
-    "order":"Thysanoptera",
+  "37": {
+    "order": "Megaloptera",
     "suborder": "",
-    "image":"@drawable/p28",
-    "description":"",
-    "previousquestionreference":26,
-    "progress":100
+    "image": "@drawable/p37",
+    "description": "",
+    "previousquestionreference": 19,
+    "progress": 100
   },
-  "29":{
-    "title":"Comparison of Wing Sizes",
-    "question1description":"Roughly the same",
-    "question2description":"Significantly different",
-    "question1image":"@drawable/p29_1",
-    "question2image":"@drawable/p29_2",
-    "question1button":"Front and hind wings have roughly the same size",
-    "question2button":"Front and hind wings have significantly different size or shape",
-    "question1reference":30,
-    "question2reference":35,
-    "previousquestionreference":21,
-    "progress":60
-  },
-  "30":{
-    "title":"Length of Antennae",
-    "question1description":"",
-    "question2description":"",
-    "question1image":"@drawable/p30_1",
-    "question2image":"@drawable/p30_2",
-    "question1button":"Antennae longer than head",
-    "question2button":"Antennae shorter or same size as head",
-    "question1reference":31,
-    "question2reference":34,
-    "previousquestionreference":29,
-    "progress":78
-  },
-  "31":{
-    "title":"Wing Veins",
-    "question1description":"At the end of the wing, veins branch off",
-    "question2description":"",
-    "question1image":"@drawable/p31_1",
-    "question2image":"@drawable/p31_2",
-    "question1button":"Branching veins",
-    "question2button":"Not branching veins",
-    "question1reference":32,
-    "question2reference":33,
-    "previousquestionreference":30,
-    "progress":89
-  },
-  "32":{
-    "order":"Neuroptera",
+  "38": {
+    "order": "Psocoptera",
     "suborder": "",
-    "image":"@drawable/p32",
-    "description":"",
-    "previousquestionreference":31,
-    "progress":100
+    "image": "@drawable/p38",
+    "description": "",
+    "previousquestionreference": 20,
+    "progress": 100
   },
-  "33":{
-    "order":"Megaloptera",
+  "39": {
+    "order": "Hymenoptera",
     "suborder": "",
-    "image":"@drawable/p33",
-    "description":"",
-    "previousquestionreference":31,
-    "progress":100
+    "image": "@drawable/p39",
+    "description": "",
+    "previousquestionreference": 20,
+    "progress": 100
   },
-  "34":{
-    "order":"Odonata",
+  "40": {
+    "order": "Odonata",
     "suborder": "",
-    "image":"@drawable/p34",
-    "description":"",
-    "previousquestionreference":30,
-    "progress":100
+    "image": "@drawable/p40",
+    "description": "",
+    "previousquestionreference": 16,
+    "progress": 100
   },
-  "35":{
-    "title":"Comparison of Wing Sizes",
-    "question1description":"",
-    "question2description":"",
-    "question1image":"@drawable/p35_1",
-    "question2image":"@drawable/p35_2",
-    "question1button":"Hind wings are wider than front wings",
-    "question2button":"Hind wings are same size of smaller than front wings",
-    "question1reference":36,
-    "question2reference":63,
-    "previousquestionreference":29,
-    "progress":70
-  },
-  "36":{
-    "title":"Presence of Cerci",
-    "question1description":"Cerci locate at the end of insect, almost like tails",
-    "question2description":"Cerci locate at the end of insect, almost like tails",
-    "question1image":"@drawable/p36_1",
-    "question2image":"@drawable/p36_2",
-    "question1button":"Short of no cerci",
-    "question2button":"Long cerci",
-    "question1reference":37,
-    "question2reference":40,
-    "previousquestionreference":35,
-    "progress":80
-  },
-  "63":{
-    "order":"Orthoptera",
+  "41": {
+    "order": "Arachnida",
     "suborder": "",
-    "image":"@drawable/p63",
-    "description":"",
-    "previousquestionreference":35,
-    "progress":100
+    "image": "@drawable/p41",
+    "description": "",
+    "previousquestionreference": 0,
+    "progress": 100
   },
-  "37":{
-    "title":"Number of Tarsi",
-    "question1description":"",
-    "question2description":"",
-    "question1image":"@drawable/p37_1",
-    "question2image":"@drawable/p37_2",
-    "question1button":"Two or three segmented tarsi",
-    "question2button":"More than three segmented tarsi",
-    "question1reference":38,
-    "question2reference":39,
-    "previousquestionreference":36,
-    "progress":90
+  "42": {
+    "title": "Presence of Antennae:",
+    "question1description": "Antannae clearly visible near the top of the head.",
+    "question2description": "Antannae can sometimes be broken off - ensure there's no protrusions at the top of the head.",
+    "question1image": "@drawable/p42_1",
+    "question2image": "@drawable/p42_2",
+    "question1button": "Antennae present",
+    "question2button": "Antennae absent",
+    "question1reference": 43,
+    "question2reference": 57,
+    "previousquestionreference": 1,
+    "progress": 0
   },
-  "38":{
-    "order":"Psocoptera",
+  "43": {
+    "title": "Presence of Collophore or Cerci:",
+    "question1description": "Collophore are located behind the last leg. Cerci are located at the end of the insect, similar to having two tails. They can be fragile and are often broken off. \n\n The insect should clearly have both present.",
+    "question2description": "Neither collophore nor cerci are present. If you can see either one, check the insect was not damaged and cerci weren't broken off.",
+    "question1image": "@drawable/p43_1",
+    "question2image": "@drawable/p43_2",
+    "question1button": "Both present",
+    "question2button": "Both absent",
+    "question1reference": 44,
+    "question2reference": 45,
+    "previousquestionreference": 42,
+    "progress": 0
+  },
+  "44": {
+    "order": "Collembola",
     "suborder": "",
-    "image":"@drawable/p38",
-    "description":"",
-    "previousquestionreference":37,
-    "progress":100
+    "image": "@drawable/p44",
+    "description": "",
+    "previousquestionreference": 43,
+    "progress": 100
   },
-  "39":{
-    "order":"Hymenoptera",
+  "45": {
+    "title": "Shape of Body:",
+    "question1description": "The insect body appears round (turn insect on the side if needed).",
+    "question2description": "The body appears flat either vertically or horizontally.",
+    "question1image": "@drawable/p45_1",
+    "question2image": "@drawable/p45_2",
+    "question1button": "Round body",
+    "question2button": "Flat body",
+    "question1reference": 46,
+    "question2reference": 58,
+    "previousquestionreference": 43,
+    "progress": 0
+  },
+  "46": {
+    "title": "Connection between Abdomen and Thorax",
+    "question1description": "No cinched waist. Abdomen and thorax are same width.",
+    "question2description": "Abdomen and thorax are narrowly joint together",
+    "question1image": "@drawable/p46_1",
+    "question2image": "@drawable/p46_2",
+    "question1button": "Same width",
+    "question2button": "Narrowly joint together",
+    "question1reference": 47,
+    "question2reference": 56,
+    "previousquestionreference": 45,
+    "progress": 0
+  },
+  "47": {
+    "title": "Presence of Tarsal Claws",
+    "question1description": "Tarsal claw looks like a claw at the end of the legs",
+    "question2description": "",
+    "question1image": "@drawable/p47_1",
+    "question2image": "@drawable/p47_2",
+    "question1button": "Tarsal claws present",
+    "question2button": "Tarsal claws absent",
+    "question1reference": 48,
+    "question2reference": 55,
+    "previousquestionreference": 46,
+    "progress": 0
+  },
+  "48": {
+    "title": "Mouthpart",
+    "question1description": "",
+    "question2description": "",
+    "question1image": "@drawable/p48_1",
+    "question2image": "@drawable/p48_2",
+    "question1button": "Piercing-sucking",
+    "question2button": "Chewing",
+    "question1reference": 49,
+    "question2reference": 50,
+    "previousquestionreference": 47,
+    "progress": 0
+  },
+  "49": {
+    "order": "Hemiptera",
     "suborder": "",
-    "image":"@drawable/p39",
-    "description":"",
-    "previousquestionreference":37,
-    "progress":100
+    "image": "@drawable/p49",
+    "description": "",
+    "previousquestionreference": 48,
+    "progress": 100
   },
-  "40":{
-    "order":"Ephemeroptera",
+  "50": {
+    "title": "Abdominal Forceps",
+    "question1description": "Forceps look like a wrench at the end of the body. Entire body hard and brown.",
+    "question2description": "",
+    "question1image": "@drawable/p50_1",
+    "question2image": "@drawable/p50_2",
+    "question1button": "Abdominal forceps present",
+    "question2button": "Abdominal forceps absent",
+    "question1reference": 51,
+    "question2reference": 52,
+    "previousquestionreference": 48,
+    "progress": 0
+  },
+  "51": {
+    "order": "Dermaptera",
     "suborder": "",
-    "image":"@drawable/p40",
-    "description":"",
-    "previousquestionreference":36,
-    "progress":100
+    "image": "@drawable/p51",
+    "description": "",
+    "previousquestionreference": 50,
+    "progress": 100
   },
-  "41":{
-    "order":"Arachnida",
+  "52": {
+    "title": "Presence of Cerci",
+    "question1description": "Cerci locate at the end of the insect. Looks like tails.",
+    "question2description": "",
+    "question1image": "@drawable/p52_1",
+    "question2image": "@drawable/p52_2",
+    "question1button": "Cerci present",
+    "question2button": "Cerci absent",
+    "question1reference": 53,
+    "question2reference": 54,
+    "previousquestionreference": 50,
+    "progress": 0
+  },
+  "53": {
+    "order": "Orthoptera",
     "suborder": "",
-    "image":"@drawable/p41",
-    "description":"",
-    "previousquestionreference":0,
-    "progress":100
+    "image": "@drawable/p53",
+    "description": "",
+    "previousquestionreference": 52,
+    "progress": 100
   },
-  "42":{
-    "title":"Presence of Antennae",
-    "question1description":"",
-    "question2description":"",
-    "question1image":"@drawable/p42_1",
-    "question2image":"@drawable/p42_2",
-    "question1button":"Antennae present",
-    "question2button":"Antennae absent",
-    "question1reference":43,
-    "question2reference":57,
-    "previousquestionreference":1,
-    "progress":27
-  },
-  "43":{
-    "title":"Presence of Collophore or Cercus",
-    "question1description":"Collophore locates behind the last leg. \n\n Cercus locates at the end of the insect, like a tail",
-    "question2description":"",
-    "question1image":"@drawable/p43_1",
-    "question2image":"@drawable/p43_2",
-    "question1button":"Both collophore and cercus present",
-    "question2button":"Both collophore and cercus absent",
-    "question1reference":44,
-    "question2reference":45,
-    "previousquestionreference":42,
-    "progress":36
-  },
-  "44":{
-    "order":"Collembola",
+  "54": {
+    "order": "Psocoptera",
     "suborder": "",
-    "image":"@drawable/p44",
-    "description":"",
-    "previousquestionreference":43,
-    "progress":100
+    "image": "@drawable/p54",
+    "description": "",
+    "previousquestionreference": 52,
+    "progress": 100
   },
-  "57":{
-    "order":"Diptera",
+  "55": {
+    "order": "Thysanoptera",
     "suborder": "",
-    "image":"@drawable/p57",
-    "description":"",
-    "previousquestionreference":42,
-    "progress":100
+    "image": "@drawable/p55",
+    "description": "",
+    "previousquestionreference": 47,
+    "progress": 100
   },
-  "45":{
-    "title":"Shape of Body",
-    "question1description":"",
-    "question2description":"",
-    "question1image":"@drawable/p45_1",
-    "question2image":"@drawable/p45_2",
-    "question1button":"Body is round",
-    "question2button":"Body flatted vertically or horizontally",
-    "question1reference":46,
-    "question2reference":58,
-    "previousquestionreference":43,
-    "progress":45
-  },
-  "46":{
-    "title":"Connection between Abdomen and Thorax",
-    "question1description":"No cinched waist. Abdomen and thorax are same width.",
-    "question2description":"Abdomen and thorax are narrowly joint together",
-    "question1image":"@drawable/p46_1",
-    "question2image":"@drawable/p46_2",
-    "question1button":"Same width",
-    "question2button":"Narrowly joint together",
-    "question1reference":47,
-    "question2reference":56,
-    "previousquestionreference":45,
-    "progress":55
-  },
-  "47":{
-    "title":"Presence of Tarsal Claws",
-    "question1description":"Tarsal claw looks like a claw at the end of the legs",
-    "question2description":"",
-    "question1image":"@drawable/p47_1",
-    "question2image":"@drawable/p47_2",
-    "question1button":"Tarsal claws present",
-    "question2button":"Tarsal claws absent",
-    "question1reference":48,
-    "question2reference":55,
-    "previousquestionreference":46,
-    "progress":64
-  },
-  "48":{
-    "title":"Mouthpart",
-    "question1description":"",
-    "question2description":"",
-    "question1image":"@drawable/p48_1",
-    "question2image":"@drawable/p48_2",
-    "question1button":"Piercing-sucking",
-    "question2button":"Chewing",
-    "question1reference":49,
-    "question2reference":50,
-    "previousquestionreference":47,
-    "progress":73
-  },
-  "50":{
-    "title":"Abdominal Forceps",
-    "question1description":"Forceps look like a wrench at the end of the body. Entire body hard and brown.",
-    "question2description":"",
-    "question1image":"@drawable/p50_1",
-    "question2image":"@drawable/p50_2",
-    "question1button":"Abdominal forceps present",
-    "question2button":"Abdominal forceps absent",
-    "question1reference":51,
-    "question2reference":52,
-    "previousquestionreference":48,
-    "progress":82
-  },
-  "55":{
-    "order":"Thysanoptera",
+  "56": {
+    "order": "Hymenoptera",
     "suborder": "",
-    "image":"@drawable/p55",
-    "description":"",
-    "previousquestionreference":47,
-    "progress":100
+    "image": "@drawable/p56",
+    "description": "",
+    "previousquestionreference": 46,
+    "progress": 100
   },
-  "49":{
-    "order":"Hemiptera",
+  "57": {
+    "order": "Diptera",
     "suborder": "",
-    "image":"@drawable/p49",
-    "description":"",
-    "previousquestionreference":48,
-    "progress":100
+    "image": "@drawable/p57",
+    "description": "",
+    "previousquestionreference": 42,
+    "progress": 100
   },
-  "51":{
-    "order":"Dermaptera",
+  "58": {
+    "title": "Piercing-Sucking mouthpart",
+    "question1description": "",
+    "question2description": "",
+    "question1image": "@drawable/p58_1",
+    "question2image": "@drawable/p58_2",
+    "question1button": "Piericing-sucking present",
+    "question2button": "Piericing-sucking absent; antennae longer than head",
+    "question1reference": 59,
+    "question2reference": 62,
+    "previousquestionreference": 45,
+    "progress": 0
+  },
+  "59": {
+    "title": "Length of Antennae",
+    "question1description": "",
+    "question2description": "",
+    "question1image": "@drawable/p59_1",
+    "question2image": "@drawable/p59_2",
+    "question1button": "Antennae longer than head",
+    "question2button": "Antennae shorter than head",
+    "question1reference": 60,
+    "question2reference": 61,
+    "previousquestionreference": 58,
+    "progress": 0
+  },
+  "60": {
+    "order": "Sternorrhyncha",
     "suborder": "",
-    "image":"@drawable/p51",
-    "description":"",
-    "previousquestionreference":50,
-    "progress":100
+    "image": "@drawable/p60",
+    "description": "",
+    "previousquestionreference": 59,
+    "progress": 100
   },
-  "52":{
-    "title":"Presence of Cerci",
-    "question1description":"Cerci locate at the end of the insect. Looks like tails.",
-    "question2description":"",
-    "question1image":"@drawable/p52_1",
-    "question2image":"@drawable/p52_2",
-    "question1button":"Cerci present",
-    "question2button":"Cerci absent",
-    "question1reference":53,
-    "question2reference":54,
-    "previousquestionreference":50,
-    "progress":91
-  },
-  "53":{
-    "order":"Orthoptera",
+  "61": {
+    "order": "Diptera",
     "suborder": "",
-    "image":"@drawable/p53",
-    "description":"",
-    "previousquestionreference":52,
-    "progress":100
+    "image": "@drawable/p61",
+    "description": "",
+    "previousquestionreference": 59,
+    "progress": 100
   },
-  "54":{
-    "order":"Psocoptera",
+  "62": {
+    "order": "Psocoptera",
     "suborder": "",
-    "image":"@drawable/p54",
-    "description":"",
-    "previousquestionreference":52,
-    "progress":100
+    "image": "@drawable/p62",
+    "description": "",
+    "previousquestionreference": 58,
+    "progress": 100
   },
-  "58":{
-    "title":"Piercing-Sucking mouthpart",
-    "question1description":"",
-    "question2description":"",
-    "question1image":"@drawable/p58_1",
-    "question2image":"@drawable/p58_2",
-    "question1button":"Piericing-sucking present",
-    "question2button":"Piericing-sucking absent; antennae longer than head",
-    "question1reference":59,
-    "question2reference":62,
-    "previousquestionreference":45,
-    "progress":75
-  },
-  "59":{
-    "title":"Length of Antennae",
-    "question1description":"",
-    "question2description":"",
-    "question1image":"@drawable/p59_1",
-    "question2image":"@drawable/p59_2",
-    "question1button":"Antennae longer than head",
-    "question2button":"Antennae shorter than head",
-    "question1reference":60,
-    "question2reference":61,
-    "previousquestionreference":58,
-    "progress":88
-  },
-  "60":{
-    "order":"Sternorrhyncha",
+  "63": {
+    "order": "Thysanoptera",
     "suborder": "",
-    "image":"@drawable/p60",
-    "description":"",
-    "previousquestionreference":59,
-    "progress":100
+    "image": "@drawable/p63",
+    "description": "",
+    "previousquestionreference": 11,
+    "progress": 100
   },
-  "61":{
-    "order":"Diptera",
+  "64": {
+    "order": "Orthoptera",
     "suborder": "",
-    "image":"@drawable/p61",
-    "description":"",
-    "previousquestionreference":59,
-    "progress":100
+    "image": "@drawable/p64",
+    "description": "",
+    "previousquestionreference": 17,
+    "progress": 100
   },
-  "62":{
-    "order":"Psocoptera",
+  "65": {
+    "order": "Ephemeroptera",
     "suborder": "",
-    "image":"@drawable/p62",
-    "description":"",
-    "previousquestionreference":58,
-    "progress":100
+    "image": "@drawable/p65",
+    "description": "",
+    "previousquestionreference": 18,
+    "progress": 100
+  },
+  "66": {
+    "order": "Lepidoptera",
+    "suborder": "",
+    "image": "@drawable/p66",
+    "description": "",
+    "previousquestionreference": 21,
+    "progress": 100
+  },
+  "67": {
+    "order": "Nematocera",
+    "suborder": "",
+    "image": "@drawable/p67",
+    "description": "",
+    "previousquestionreference": 25,
+    "progress": 100
+  },
+  "68": {
+    "order": "Brachycera",
+    "suborder": "",
+    "image": "@drawable/p68",
+    "description": "",
+    "previousquestionreference": 25,
+    "progress": 100
+  },
+  "69": {
+    "order": "Microlepidoptera",
+    "suborder": "",
+    "image": "@drawable/p69",
+    "description": "",
+    "previousquestionreference": 24,
+    "progress": 100
+  },
+  "70": {
+    "order": "Trichoptera",
+    "suborder": "",
+    "image": "@drawable/p70",
+    "description": "",
+    "previousquestionreference": 24,
+    "progress": 100
   }
 }
