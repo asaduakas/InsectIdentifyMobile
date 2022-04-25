@@ -20,7 +20,7 @@
         <entry key="app/src/main/res/layout/activity_data.xml" value="0.42813293457031254" />
         <entry key="app/src/main/res/layout/activity_dicho.xml" value="0.14714260616817987" />
         <entry key="app/src/main/res/layout/activity_double_question.xml" value="0.22958529286019666" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.19630085713154566" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1996579734929457" />
         <entry key="app/src/main/res/layout/activity_login2.xml" value="0.1358108108108108" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22884711188239018" />
         <entry key="app/src/main/res/layout/activity_mouthpart.xml" value="0.18576965332031237" />
@@ -40,6 +40,7 @@
         <entry key="app/src/main/res/menu/menu_dicho.xml" value="0.2543822146216332" />
         <entry key="app/src/main/res/menu/menu_main.xml" value="0.20554199218750002" />
         <entry key="app/src/main/res/menu/nav_menu.xml" value="0.12861842105263158" />
+        <entry key="app/src/main/res/menu/nav_menu_authorized.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/logo.xml" value="0.1595" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/logo_round.xml" value="0.2165" />
       </map>

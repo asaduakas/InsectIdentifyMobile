@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_darkMode"
         android:title="@string/darkMode"
@@ -10,4 +9,9 @@
         android:id="@+id/nav_lang"
         android:title="@string/lang"
         android:icon="@drawable/ic_translate_black_48dp"/>
+
+    <item
+        android:id="@+id/nav_logout"
+        android:title="@string/logOut"
+        android:icon="@drawable/ic_logout_black_48dp"/>
 </menu>

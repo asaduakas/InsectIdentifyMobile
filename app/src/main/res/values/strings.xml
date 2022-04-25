@@ -8,11 +8,12 @@
 
     <!-- Main and Login activities -->
     <string name="statusEmpty" translatable="false"></string>
-    <string name="statusAdmin">Logged in as Admin</string>
-    <string name="statusDefault">Logged in as Default</string>
+    <string name="statusAdmin">Admin</string>
+    <string name="statusDefault">Default</string>
     <string name="usernameHint">Username</string>
     <string name="pwHint">Password</string>
     <string name="pwForgot">Forgot Password</string>
+    <string name="errorMsg">Wrong username or password!</string>
 
     <!-- Buttons -->
     <string name="logIn">Sign In</string>
@@ -35,8 +36,8 @@
     <string name="trapMethod">Trapping Method</string>
     <string name="catchTime">Catch Time</string>
     <string name="field">Field</string>
-    <string name="sDate">Starting Date</string>
-    <string name="sTime">Starting Time</string>
+    <string name="sDate">Starting Date :</string>
+    <string name="sTime">Starting Time :</string>
     <string name="dataTitle">Data Entry</string>
     <string name="date">dd/mm/yy</string>
     <string name="time">HH:MM</string>

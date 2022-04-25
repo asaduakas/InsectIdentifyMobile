@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import com.google.android.material.internal.NavigationMenu;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
@@ -60,7 +61,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     this.finish();
                 }
                 else{
-                    Snackbar errorMessage = Snackbar.make(findViewById(R.id.LoginScreenBtn), "Wrong Username or Password!", BaseTransientBottomBar.LENGTH_LONG);
+                    Snackbar errorMessage = Snackbar.make(findViewById(R.id.LoginScreenBtn), R.string.errorMsg, BaseTransientBottomBar.LENGTH_LONG);
                     View view = errorMessage.getView();
                     FrameLayout.LayoutParams params =(FrameLayout.LayoutParams)view.getLayoutParams();
                     params.gravity = Gravity.TOP;

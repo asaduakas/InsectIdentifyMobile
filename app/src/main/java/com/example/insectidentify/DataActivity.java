@@ -27,15 +27,17 @@ public class DataActivity extends AppCompatActivity {
     final Calendar myCalendar = Calendar.getInstance();
     EditText editTextDate;
     EditText eTextTime;
-    TimePickerDialog picker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
 
+        //TOOLBAR SETUP
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.ic_launcher_foreground);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setElevation(0);
         getSupportActionBar().setTitle(R.string.dataTitle);
 
         //Trapping dropdown

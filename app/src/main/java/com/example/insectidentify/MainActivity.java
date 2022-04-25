@@ -3,26 +3,35 @@ package com.example.insectidentify;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.FrameLayout;
 
+import com.google.android.material.internal.NavigationMenu;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.*;
 
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity implements OnClickListener {
-    Button logInBtn;
+public class MainActivity extends AppCompatActivity implements OnClickListener, NavigationView.OnNavigationItemSelectedListener{
     Button startBtn;
     Button dataBtn;
-    String status = "notLoggedIn";
+    String receivedStatus;
+    NavigationView navigationView;
+    MenuItem loginMi;
+
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
 
@@ -37,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         startBtn.setOnClickListener(this);
         dataBtn = findViewById(R.id.dataBtn);
         dataBtn.setOnClickListener(this);
+        navigationView = findViewById(R.id.nav);
+        navigationView.setNavigationItemSelectedListener(this);
 
         //Nav Bar setup
         // drawer layout instance to toggle the menu icon to open
@@ -105,9 +116,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 Intent intent = new Intent(this, DataActivity.class);
                 startActivity(intent);
         }
-        //TODO: Add snackbar popup message upon logging out
-        //Snackbar confirmationMessage = Snackbar.make(findViewById(R.id.LogInBtn), "Signed out successfully!", BaseTransientBottomBar.LENGTH_LONG);
-        //confirmationMessage.show();
     }
 
 
@@ -125,29 +133,64 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
 
     @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        // Handle navigation view item clicks here.
+        switch (item.getItemId()){
+            case R.id.nav_logout:
+                receivedStatus = null;
+                navigationView.getMenu().clear(); //clear old inflated items.
+                navigationView.inflateMenu(R.menu.nav_menu); //inflate new items.
+                invalidateOptionsMenu();
+                Snackbar confirmationMessage = Snackbar.make(findViewById(R.id.StartBtn), "Signed out successfully!", BaseTransientBottomBar.LENGTH_LONG);
+                View view = confirmationMessage.getView();
+                FrameLayout.LayoutParams params =(FrameLayout.LayoutParams)view.getLayoutParams();
+                params.gravity = Gravity.TOP;
+                view.setLayoutParams(params);
+                confirmationMessage.show();
+                break;
+        }
+        //close navigation drawer
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
     @Override
-    public void onResume(){
-        super.onResume();
-        //TextView statusBar = findViewById(R.id.status);
-        Intent intent = getIntent();
-        String receivedStatus = intent.getStringExtra("status");
+    public boolean onPrepareOptionsMenu(Menu menu){
+        super.onPrepareOptionsMenu(menu);
+        MenuItem logInMi = menu.findItem(R.id.action_login);
+        MenuItem logInIcon = menu.findItem(R.id.loginIcon);
+        MenuItem logOutMi = menu.findItem(R.id.nav_logout);
         if(receivedStatus != null){
             if(receivedStatus.equals("admin")){
-                //statusBar.setText(R.string.statusAdmin);
-                this.status = "loggedIn";
-                logInBtn.setText(R.string.logOut);
+                logInMi.setTitle(R.string.statusAdmin);
+                logInMi.setEnabled(false);
+                logInIcon.setVisible(true);
+                navigationView.getMenu().clear(); //clear old inflated items.
+                navigationView.inflateMenu(R.menu.nav_menu_authorized); //inflate new items.
             }
             else if (receivedStatus.equals("default")){
-               // statusBar.setText(R.string.statusDefault);
-                this.status = "loggedIn";
-                logInBtn.setText(R.string.logOut);
+                logInMi.setTitle(R.string.statusDefault);
+                logInMi.setEnabled(false);
+                logInIcon.setVisible(true);
+                logOutMi.setVisible(true);
+                navigationView.getMenu().clear(); //clear old inflated items.
+                navigationView.inflateMenu(R.menu.nav_menu_authorized); //inflate new items.
             }
         }
+        return true;
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        Intent intent = getIntent();
+        receivedStatus = intent.getStringExtra("status");
     }
 
 }
