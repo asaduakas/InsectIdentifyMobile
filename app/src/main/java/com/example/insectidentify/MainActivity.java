@@ -3,10 +3,13 @@ package com.example.insectidentify;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.UiModeManager;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
@@ -30,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
     Button dataBtn;
     String receivedStatus;
     NavigationView navigationView;
-    MenuItem loginMi;
 
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
@@ -147,6 +149,22 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
                 params.gravity = Gravity.TOP;
                 view.setLayoutParams(params);
                 confirmationMessage.show();
+                break;
+            case R.id.nav_darkMode:
+                int nightModeFlags = getResources().getConfiguration().uiMode &
+                                Configuration.UI_MODE_NIGHT_MASK;
+                if (nightModeFlags == Configuration.UI_MODE_NIGHT_NO){
+                    AppCompatDelegate
+                            .setDefaultNightMode(
+                                    AppCompatDelegate
+                                            .MODE_NIGHT_YES);
+                }
+                else{
+                    AppCompatDelegate
+                            .setDefaultNightMode(
+                                    AppCompatDelegate
+                                            .MODE_NIGHT_NO);
+                }
                 break;
         }
         //close navigation drawer

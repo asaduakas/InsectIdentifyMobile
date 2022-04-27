@@ -14,24 +14,26 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TimePicker;
-
-import com.google.android.material.textfield.TextInputLayout;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class DataActivity extends AppCompatActivity {
+public class DataActivity extends AppCompatActivity implements View.OnClickListener {
 
     final Calendar myCalendar = Calendar.getInstance();
     EditText editTextDate;
     EditText eTextTime;
+    ImageButton checkBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
+        checkBtn =  findViewById(R.id.checkButton);
+        checkBtn.setOnClickListener(this);
 
         //TOOLBAR SETUP
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -117,6 +119,12 @@ public class DataActivity extends AppCompatActivity {
         String myFormat="dd/MM/yy";
         SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.GERMANY);
         editTextDate.setText(dateFormat.format(myCalendar.getTime()));
+    }
+
+    @Override
+    public void onClick(View v){
+        Intent intent = new Intent(this,ActivityFragmentViewPager.class);
+        startActivity(intent);
     }
 
     @Override

@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.16614583333333333" />
+        <entry key="../../.gradle/caches/transforms-3/e28f006988a95f750d6b8550309c18b4/transformed/material-1.7.0-alpha01/res/layout/design_layout_tab_text.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/gray_divider.xml" value="0.1065" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.184" />
         <entry key="app/src/main/res/drawable/empty_tall_divider.xml" value="0.2475" />
@@ -20,6 +21,9 @@
         <entry key="app/src/main/res/layout/activity_data.xml" value="0.42813293457031254" />
         <entry key="app/src/main/res/layout/activity_dicho.xml" value="0.14714260616817987" />
         <entry key="app/src/main/res/layout/activity_double_question.xml" value="0.22958529286019666" />
+        <entry key="app/src/main/res/layout/activity_fragment_view_pager.xml" value="0.284698486328125" />
+        <entry key="app/src/main/res/layout/activity_insect.xml" value="0.17571611799914494" />
+        <entry key="app/src/main/res/layout/activity_insect_entry.xml" value="0.17571611799914494" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1996579734929457" />
         <entry key="app/src/main/res/layout/activity_login2.xml" value="0.1358108108108108" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22884711188239018" />
@@ -29,6 +33,11 @@
         <entry key="app/src/main/res/layout/dicho1.xml" value="0.20155300564236112" />
         <entry key="app/src/main/res/layout/dropdown_menu_item.xml" value="0.20008550662676358" />
         <entry key="app/src/main/res/layout/example.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/fragment_demo.xml" value="0.12612227447627192" />
+        <entry key="app/src/main/res/layout/fragment_insect_entry.xml" value="0.19196237708422403" />
+        <entry key="app/src/main/res/layout/fragment_pager.xml" value="0.21213836669921876" />
+        <entry key="app/src/main/res/layout/insect_activity.xml" value="0.1851218469431381" />
+        <entry key="app/src/main/res/layout/insect_fragment.xml" value="0.1851218469431381" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.20008550662676358" />
         <entry key="app/src/main/res/layout/log_in.xml" value="0.3414986543118401" />
         <entry key="app/src/main/res/layout/popup.xml" value="0.1980263157894737" />
@@ -55,7 +64,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.21354166666666666" />
+        <option name="scale" value="0.17571611799914494" />
       </ProjectState>
     </option>
   </component>
