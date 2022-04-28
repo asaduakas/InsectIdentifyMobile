@@ -90,5 +90,14 @@
         <item name="icon">@drawable/ic_help_outline_black_48dp</item>
     </style>
 
+    <style name="Theme.InsectIdentify.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.InsectIdentify.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.InsectIdentify.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 
 </resources>

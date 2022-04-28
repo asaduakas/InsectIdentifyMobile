@@ -123,7 +123,7 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v){
-        Intent intent = new Intent(this,ActivityFragmentViewPager.class);
+        Intent intent = new Intent(this,InsectPagerActivity.class);
         startActivity(intent);
     }
 

@@ -24,6 +24,7 @@
         <entry key="app/src/main/res/layout/activity_fragment_view_pager.xml" value="0.284698486328125" />
         <entry key="app/src/main/res/layout/activity_insect.xml" value="0.17571611799914494" />
         <entry key="app/src/main/res/layout/activity_insect_entry.xml" value="0.17571611799914494" />
+        <entry key="app/src/main/res/layout/activity_insect_pager.xml" value="0.3409918880911147" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1996579734929457" />
         <entry key="app/src/main/res/layout/activity_login2.xml" value="0.1358108108108108" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22884711188239018" />
@@ -35,7 +36,9 @@
         <entry key="app/src/main/res/layout/example.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_demo.xml" value="0.12612227447627192" />
         <entry key="app/src/main/res/layout/fragment_insect_entry.xml" value="0.19196237708422403" />
+        <entry key="app/src/main/res/layout/fragment_insect_pager.xml" value="0.17828131680205217" />
         <entry key="app/src/main/res/layout/fragment_pager.xml" value="0.21213836669921876" />
+        <entry key="app/src/main/res/layout/fragment_test.xml" value="0.18298418127404875" />
         <entry key="app/src/main/res/layout/insect_activity.xml" value="0.1851218469431381" />
         <entry key="app/src/main/res/layout/insect_fragment.xml" value="0.1851218469431381" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.20008550662676358" />
