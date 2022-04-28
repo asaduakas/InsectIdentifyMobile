@@ -12,13 +12,10 @@ import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.insectidentify.ActivityFragmentViewPager;
 import com.example.insectidentify.InsectPagerActivity;
 import com.example.insectidentify.R;
 import com.example.insectidentify.databinding.FragmentInsectPagerBinding;
@@ -140,13 +137,13 @@ public class PlaceholderFragment extends Fragment {
         editTextFilledExposedDropdown.setAdapter(adapter);
 
         //ADD TAB BUTTON
-        /*addTabBtn = getView().findViewById(R.id.addTab);
+        addTabBtn = getView().findViewById(R.id.addTab);
         addTabBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 InsectPagerActivity act = (InsectPagerActivity) getActivity();
-                act.onClick();
+                act.onClickAddTab();
             }
-        });*/
+        });
     }
 }

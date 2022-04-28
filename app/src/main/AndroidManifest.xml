@@ -15,9 +15,6 @@
             android:label="@string/title_activity_insect_pager"
             android:theme="@style/Theme.InsectIdentify.NoActionBar" />
         <activity
-            android:name=".ActivityFragmentViewPager"
-            android:exported="false" />
-        <activity
             android:name=".DataActivity"
             android:exported="false" />
         <activity
