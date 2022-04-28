@@ -1,5 +1,6 @@
 package com.example.insectidentify;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.insectidentify.ui.main.PlaceholderFragment;
@@ -35,14 +36,24 @@ public class InsectPagerActivity extends AppCompatActivity {
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = binding.fab;
 
+        //Create first page automatically
+        sectionsPagerAdapter.add(PlaceholderFragment.newInstance(sectionsPagerAdapter.getCount()),
+                "INSECT " + String.valueOf(sectionsPagerAdapter.getCount() + 1));
+        sectionsPagerAdapter.notifyDataSetChanged();
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int curCount = sectionsPagerAdapter.getCount();
                 sectionsPagerAdapter.add(PlaceholderFragment.newInstance(curCount),
-                        "TAB " + String.valueOf(curCount));
+                        "INSECT " + String.valueOf(curCount + 1));
                 sectionsPagerAdapter.notifyDataSetChanged();
             }
         });
+    }
+
+    public void onClickSub() {
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }

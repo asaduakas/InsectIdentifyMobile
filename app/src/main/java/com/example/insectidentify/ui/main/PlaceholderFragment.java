@@ -4,6 +4,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -12,6 +18,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.insectidentify.ActivityFragmentViewPager;
+import com.example.insectidentify.InsectPagerActivity;
 import com.example.insectidentify.R;
 import com.example.insectidentify.databinding.FragmentInsectPagerBinding;
 
@@ -25,6 +33,12 @@ public class PlaceholderFragment extends Fragment {
 
     private PageViewModel pageViewModel;
     private FragmentInsectPagerBinding binding;
+    Button subBtn;
+    CheckBox readyBox;
+    ImageButton addBtn;
+    ImageButton minBtn;
+    TextView counter;
+    Button addTabBtn;
 
     public static PlaceholderFragment newInstance(int index) {
         PlaceholderFragment fragment = new PlaceholderFragment();
@@ -53,13 +67,6 @@ public class PlaceholderFragment extends Fragment {
         binding = FragmentInsectPagerBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.sectionLabel;
-        pageViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 
@@ -67,5 +74,79 @@ public class PlaceholderFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    @Override
+    public void onViewCreated(View v, Bundle savedInstanceState) {
+
+        //READY CHECKBOX
+        readyBox = getView().findViewById(R.id.checkBox);
+        readyBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    subBtn.setEnabled(true);
+
+                } else {
+                    subBtn.setEnabled(false);
+                }
+
+            }
+        });
+
+        //SUBMIT BUTTON
+        subBtn = getView().findViewById(R.id.submit);
+        subBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InsectPagerActivity act = (InsectPagerActivity) getActivity();
+                act.onClickSub();
+            }
+        });
+
+        //PLUS AND MINUS BUTTONS
+        addBtn = getView().findViewById(R.id.add);
+        minBtn = getView().findViewById(R.id.subtract);
+        counter = getView().findViewById(R.id.counter);
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String currentCount = counter.getText().toString();
+                int temp = Integer.parseInt(currentCount);
+                temp++;
+                String addedCount = Integer.toString(temp);
+                counter.setText(addedCount);
+            }
+        });
+        minBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String currentCount = counter.getText().toString();
+                int temp = Integer.parseInt(currentCount);
+                if(temp>0){
+                    temp--;
+                }
+                String subtractedCount = Integer.toString(temp);
+                counter.setText(subtractedCount);
+            }
+        });
+
+        //DROPDOWN
+        String[] type = getResources().getStringArray(R.array.orders);
+        ArrayAdapter<String> adapter =
+                new ArrayAdapter<>(getView().getContext(), R.layout.dropdown_menu_item, type);
+
+        AutoCompleteTextView editTextFilledExposedDropdown =
+                getView().findViewById(R.id.orderDropdown);
+        editTextFilledExposedDropdown.setAdapter(adapter);
+
+        //ADD TAB BUTTON
+        /*addTabBtn = getView().findViewById(R.id.addTab);
+        addTabBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InsectPagerActivity act = (InsectPagerActivity) getActivity();
+                act.onClick();
+            }
+        });*/
     }
 }
