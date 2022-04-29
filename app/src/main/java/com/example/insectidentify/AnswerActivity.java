@@ -26,6 +26,7 @@ public class AnswerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answer);
+
         //TOOLBAR SETUP
         getSupportActionBar().setLogo(R.mipmap.ic_launcher_foreground);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
@@ -37,9 +38,18 @@ public class AnswerActivity extends AppCompatActivity {
         binding.setVm(_vm);
 
         restartBtn = findViewById(R.id.restartBtn);
-        saveBtn = findViewById(R.id.saveBtn);
         restartBtn.setOnClickListener(this::onButtonRestartClick);
+
+        saveBtn = findViewById(R.id.saveBtn);
         saveBtn.setOnClickListener(this::onButtonSaveClick);
+        if(SaveSharedPreferences.getUserName(this).length() != 0){
+            saveBtn.setEnabled(true);
+            saveBtn.setVisibility(View.VISIBLE);
+        }
+        else{
+            saveBtn.setEnabled(false);
+            saveBtn.setVisibility(View.INVISIBLE);
+        }
 
         qID = this.getResources().getIdentifier(_vm.getImage(),
                "drawable", this.getPackageName());

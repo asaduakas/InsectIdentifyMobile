@@ -6,7 +6,9 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +18,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -26,7 +29,12 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
     final Calendar myCalendar = Calendar.getInstance();
     EditText editTextDate;
     EditText eTextTime;
+    EditText trapNum;
     ImageButton checkBtn;
+    AutoCompleteTextView editTextFilledExposedDropdown;
+    AutoCompleteTextView editTextFilledExposedDropdown1;
+    AutoCompleteTextView editTextFilledExposedDropdown2;
+    Boolean allFilled = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +42,28 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_data);
         checkBtn =  findViewById(R.id.checkButton);
         checkBtn.setOnClickListener(this);
+        trapNum = findViewById(R.id.trapNum);
+
+        editTextDate = (EditText) findViewById(R.id.startDate);
+        eTextTime = (EditText) findViewById(R.id.startTime);
+        editTextFilledExposedDropdown = findViewById(R.id.trapDropdown);
+        editTextFilledExposedDropdown1 = findViewById(R.id.catchDropdown);
+        editTextFilledExposedDropdown2 = findViewById(R.id.fieldDropdown);
+
+        TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            @Override
+            public void afterTextChanged(Editable s) { validateFields(); }
+        };
+
+        editTextDate.addTextChangedListener(textWatcher);
+        eTextTime.addTextChangedListener(textWatcher);
+        editTextFilledExposedDropdown.addTextChangedListener(textWatcher);
+        editTextFilledExposedDropdown1.addTextChangedListener(textWatcher);
+        editTextFilledExposedDropdown2.addTextChangedListener(textWatcher);
 
         //TOOLBAR SETUP
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -49,9 +79,6 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
                         this,
                         R.layout.dropdown_menu_item,
                         type);
-
-        AutoCompleteTextView editTextFilledExposedDropdown =
-                findViewById(R.id.trapDropdown);
         editTextFilledExposedDropdown.setAdapter(adapter);
 
         //Catching time dropdown
@@ -61,23 +88,18 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
                         this,
                         R.layout.dropdown_menu_item,
                         type1);
-
-        AutoCompleteTextView editTextFilledExposedDropdown1 =
-                findViewById(R.id.catchDropdown);
         editTextFilledExposedDropdown1.setAdapter(adapter1);
 
+        //Field Dropdown
         String[] type2 = getResources().getStringArray(R.array.field);
         ArrayAdapter<String> adapter2 =
                 new ArrayAdapter<>(
                         this,
                         R.layout.dropdown_menu_item,
                         type2);
-
-        AutoCompleteTextView editTextFilledExposedDropdown2 =
-                findViewById(R.id.fieldDropdown);
         editTextFilledExposedDropdown2.setAdapter(adapter2);
 
-        editTextDate = (EditText) findViewById(R.id.startDate);
+        //DATE PICKER
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
@@ -92,7 +114,6 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
                 new DatePickerDialog(DataActivity.this,date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show());
 
         //TIME PICKER
-        eTextTime = (EditText) findViewById(R.id.startTime);
         eTextTime.setInputType(InputType.TYPE_NULL);
         eTextTime.setOnClickListener(view -> {
             final Calendar cldr = Calendar.getInstance();
@@ -123,8 +144,21 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v){
-        Intent intent = new Intent(this,InsectPagerActivity.class);
-        startActivity(intent);
+        if(allFilled){
+            String v1 = editTextFilledExposedDropdown.getText().toString();
+            String v2 = trapNum.getText().toString();
+            String v3 = editTextDate.getText().toString();
+            v3 = v3.replace("/","");
+            String v4 = editTextFilledExposedDropdown2.getText().toString();
+            String bName = v1 + "(" + v2 + ")" + v3 + v4;
+
+            Intent intent = new Intent(this,InsectPagerActivity.class);
+            intent.putExtra("bName",bName);
+            startActivity(intent);
+        }
+        else{
+            Toast.makeText(this, R.string.toastWarning, Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -143,6 +177,19 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
         }else// If we got here, the user's action was not recognized.
             // Invoke the superclass to handle it.
             return super.onOptionsItemSelected(item);
+    }
+
+    private void validateFields() {
+        if(editTextDate.getText().length()>0 && editTextFilledExposedDropdown.getText().length()>0 &&
+            editTextFilledExposedDropdown1.getText().length()>0 &&
+                editTextFilledExposedDropdown2.getText().length()>0 && eTextTime.getText().length()>0
+                && trapNum.getText().length()>0)
+        {
+            allFilled = true;
+        }
+        else{
+            allFilled = false;
+        }
     }
 
 }

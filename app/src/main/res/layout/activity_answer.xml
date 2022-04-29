@@ -66,15 +66,6 @@
         app:layout_constraintVertical_bias="0.409">
 
         <Button
-            android:id="@+id/saveBtn"
-            style="@style/fillButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/saveBtn"
-            android:minHeight="64dp"/>
-
-        <Button
             android:id="@+id/restartBtn"
             style="@style/empButton"
             android:layout_width="match_parent"
@@ -82,6 +73,15 @@
             android:layout_weight="1"
             android:text="@string/restartBtn"
             android:minHeight="64dp" />
+
+        <Button
+            android:id="@+id/saveBtn"
+            style="@style/fillButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="64dp"
+            android:text="@string/saveBtn" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

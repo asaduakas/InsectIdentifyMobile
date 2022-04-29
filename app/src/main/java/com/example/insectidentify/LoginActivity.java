@@ -50,13 +50,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 String tlPassword = sha256(password);
                 if(tlUsername.equals(getString(R.string.AdminUname)) && tlPassword.equals(getString(R.string.AdminPass))){
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    intent.putExtra("status","admin");
+                    SaveSharedPreferences.setUserName(this,"admin");
                     startActivity(intent);
                     this.finish();
                 }
                 else if(tlUsername.equals(getString(R.string.DefaultUname)) && tlPassword.equals(getString(R.string.DefaultPass))){
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    intent.putExtra("status","default");
+                    SaveSharedPreferences.setUserName(this,"default");
                     startActivity(intent);
                     this.finish();
                 }

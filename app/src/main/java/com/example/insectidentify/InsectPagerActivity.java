@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.insectidentify.ui.main.SectionsPagerAdapter;
 import com.example.insectidentify.databinding.ActivityInsectPagerBinding;
@@ -22,10 +23,12 @@ public class InsectPagerActivity extends AppCompatActivity {
 
     private ActivityInsectPagerBinding binding;
     SectionsPagerAdapter sectionsPagerAdapter;
+    String batchName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        batchName = getIntent().getStringExtra("bName");
 
         binding = ActivityInsectPagerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -73,5 +76,9 @@ public class InsectPagerActivity extends AppCompatActivity {
         }else// If we got here, the user's action was not recognized.
             // Invoke the superclass to handle it.
             return super.onOptionsItemSelected(item);
+    }
+
+    public void setBatchName(TextView batchName) {
+        batchName.setText(this.batchName);
     }
 }

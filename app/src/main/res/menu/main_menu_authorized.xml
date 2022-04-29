@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title=""
+        android:enabled="false"
+        android:icon="@drawable/ic_account_circle_fill0_wght400_grad0_opsz48"
+        android:visible="true"
+        app:showAsAction="always" />
+    <item
+        android:enabled="true"
+        android:title="@string/statusAdmin"
+        android:visible="true"
+        app:showAsAction="always" />
+</menu>

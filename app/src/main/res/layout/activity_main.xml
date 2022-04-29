@@ -39,36 +39,52 @@
 
         <Button
             android:id="@+id/StartBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginStart="-50dp"
             android:layout_marginTop="22dp"
+            android:layout_marginEnd="-50dp"
             android:layout_weight="0"
             android:text="@string/startBtnText"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="h,3:1"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
             app:layout_constraintHeight_min="70dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.216" />
+            app:layout_constraintVertical_bias="0.217" />
 
         <Button
             android:id="@+id/dataBtn"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginStart="-50dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="-50dp"
             android:layout_weight="0"
-            android:enabled="true"
             android:text="@string/addEntry"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="3:1"
-            app:layout_constraintEnd_toEndOf="@+id/StartBtn"
-            app:layout_constraintHeight_min="50dp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/StartBtn"
-            app:layout_constraintTop_toBottomOf="@+id/StartBtn"
-            app:layout_constraintVertical_bias="0.22" />
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintHeight_min="70dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <ImageButton
+            android:id="@+id/shtButton"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@null"
+            android:rotationX="5"
+            android:rotationY="2"
+            app:layout_constraintBottom_toBottomOf="@+id/StartBtn"
+            app:layout_constraintStart_toEndOf="@+id/StartBtn"
+            app:layout_constraintTop_toTopOf="@+id/StartBtn"
+            app:srcCompat="@drawable/ic_chevron_right_fill0_wght300_grad0_opsz48" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

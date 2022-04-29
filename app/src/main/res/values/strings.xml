@@ -8,17 +8,28 @@
 
     <!-- Main and Login activities -->
     <string name="statusEmpty" translatable="false"></string>
-    <string name="statusAdmin">Admin</string>
+    <string name="statusAdmin" translatable="false">Admin</string>
     <string name="statusDefault">Default</string>
     <string name="usernameHint">Username</string>
     <string name="pwHint">Password</string>
     <string name="pwForgot">Forgot Password</string>
     <string name="errorMsg">Wrong username or password!</string>
 
+    <!-- Main shortcuts -->
+    <string name="sc">Go to…</string>
+    <string name="jump">JUMP</string>
+    <string-array name="shortcuts">
+        <item>With wings and a cinched waist</item>
+        <item>With hard/shell like forewings</item>
+        <item>Forewings with hard corium and soft wing tips</item>
+        <item>With 2-3 long appendages</item>
+        <item>With pincer abdomen</item>
+    </string-array>
+
     <!-- Buttons -->
-    <string name="logIn">Sign In</string>
-    <string name="logOut">Sign Out</string>
-    <string name="startBtnText">Begin Identification</string>
+    <string name="logIn" translatable="false">Sign In</string>
+    <string name="logOut" translatable="false">Sign Out</string>
+    <string name="startBtnText">Start</string>
     <string name="cancelBtn">Cancel</string>
     <string name="saveBtn">Submit to Database</string>
     <string name="restartBtn">Restart</string>
@@ -36,11 +47,13 @@
     <string name="trapMethod">Trapping Method</string>
     <string name="catchTime">Catch Time</string>
     <string name="field">Field</string>
+    <string name="trapNum">Trap Number</string>
     <string name="sDate">Starting Date :</string>
     <string name="sTime">Starting Time :</string>
     <string name="dataTitle">Data Entry</string>
     <string name="date">dd/mm/yy</string>
     <string name="time">HH:MM</string>
+    <string name="toastWarning">Please fill out all of the fields!</string>
 
     <!-- Insect Entry-->
     <string name="bname">Batch Name</string>
@@ -74,8 +87,5 @@
         <item>Lepidoptera</item>
         <item>Heteroptera</item>
     </string-array>
-    <string name="title_activity_insect_pager">InsectPagerActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
 
 </resources>

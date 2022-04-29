@@ -36,6 +36,7 @@ public class PlaceholderFragment extends Fragment {
     ImageButton minBtn;
     TextView counter;
     Button addTabBtn;
+    TextView batchName;
 
     public static PlaceholderFragment newInstance(int index) {
         PlaceholderFragment fragment = new PlaceholderFragment();
@@ -76,6 +77,11 @@ public class PlaceholderFragment extends Fragment {
     @Override
     public void onViewCreated(View v, Bundle savedInstanceState) {
 
+        //Batch Name
+        batchName = getView().findViewById(R.id.bName);
+        InsectPagerActivity act = (InsectPagerActivity) getActivity();
+        act.setBatchName(batchName);
+
         //READY CHECKBOX
         readyBox = getView().findViewById(R.id.checkBox);
         readyBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -86,7 +92,6 @@ public class PlaceholderFragment extends Fragment {
                 } else {
                     subBtn.setEnabled(false);
                 }
-
             }
         });
 

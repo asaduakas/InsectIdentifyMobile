@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Insect ID</string>
-    <string name="y">JA</string>
-    <string name="n">NEIN</string>
+    <string name="statusDefault">Standard</string>
+    <string name="usernameHint">Nutzername</string>
+    <string name="pwHint">Passwort</string>
+    <string name="pwForgot">Passwort vergessen</string>
+    <string name="errorMsg">Falscher Nutzername/Passwort</string>
+    <string name="cancelBtn">Abbrechen</string>
+    <string name="restartBtn">Neustart</string>
+    <string name="addEntry">Eintrag einfügen</string>
 </resources>

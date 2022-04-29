@@ -7,17 +7,27 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.UiModeManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 
 import com.google.android.material.internal.NavigationMenu;
 import com.google.android.material.navigation.NavigationView;
@@ -27,15 +37,23 @@ import com.google.gson.*;
 
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener, NavigationView.OnNavigationItemSelectedListener{
     Button startBtn;
     Button dataBtn;
-    String receivedStatus;
     NavigationView navigationView;
+    String status;
+    private ImageButton shortcutBtn;
+
+    private View popupInputDialogView;
+    private AutoCompleteTextView cutDropdown;
+    private Button jumpBtn;
+    private Button cancelBtn;
 
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
+    AlertDialog alertDialog;
 
     public static HashMap<Integer, Intent> questionIntents;
     public static HashMap<Integer, QuestionViewModel> questionViewModelDictionary;
@@ -48,8 +66,18 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
         startBtn.setOnClickListener(this);
         dataBtn = findViewById(R.id.dataBtn);
         dataBtn.setOnClickListener(this);
+        if(SaveSharedPreferences.getUserName(this).length() != 0){
+            dataBtn.setEnabled(true);
+        }
+        else{
+            dataBtn.setEnabled(false);
+        }
+
         navigationView = findViewById(R.id.nav);
         navigationView.setNavigationItemSelectedListener(this);
+        if(savedInstanceState != null){
+            status = savedInstanceState.getString("status");
+        }
 
         //Nav Bar setup
         // drawer layout instance to toggle the menu icon to open
@@ -66,7 +94,85 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         questionViewModelDictionary = createModels();
         questionIntents = createIntents();
+
+        shortcutBtn = findViewById(R.id.shtButton);
+        shortcutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // Create a AlertDialog Builder.
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+                // Set title, icon, can not cancel properties.
+                alertDialogBuilder.setTitle("Shortcut");
+                alertDialogBuilder.setCancelable(true);
+
+                // Init popup dialog view and it's ui controls.
+                initPopupViewControls();
+
+                // Set the inflated layout view object to the AlertDialog builder.
+                alertDialogBuilder.setView(popupInputDialogView);
+
+                // Create AlertDialog and show.
+                alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+            }
+        });
     }
+
+    private void initPopupViewControls()
+    {
+        // Get layout inflater object.
+        LayoutInflater layoutInflater = LayoutInflater.from(MainActivity.this);
+
+        // Inflate the popup dialog from a layout xml file.
+        popupInputDialogView = layoutInflater.inflate(R.layout.popup_input_dialog, null);
+
+        // Get user input edittext and button ui controls in the popup dialog.
+        cutDropdown = popupInputDialogView.findViewById(R.id.shortcutDropdown);
+        jumpBtn = popupInputDialogView.findViewById(R.id.jumpBtn);
+        cancelBtn = popupInputDialogView.findViewById(R.id.cancelBtn);
+
+        //Trapping dropdown
+        String[] type = getResources().getStringArray(R.array.shortcuts);
+        ArrayAdapter<String> adapter =
+                new ArrayAdapter<>(
+                        this,
+                        R.layout.dropdown_menu_item,
+                        type);
+        cutDropdown.setAdapter(adapter);
+
+        jumpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String destination = cutDropdown.getText().toString();
+                switch (destination){
+                    case "With wings and a cinched waist":
+                        startActivity(questionIntents.get(39));
+                        break;
+                    case "With hard/shell like forewings":
+                        startActivity(questionIntents.get(6));
+                        break;
+                    case "Forewings with hard corium and soft wing tips":
+                        startActivity(questionIntents.get(7));
+                        break;
+                    case "With 2-3 long appendages":
+                        startActivity(questionIntents.get(35));
+                        break;
+                    case "With pincer abdomen":
+                        startActivity(questionIntents.get(26));
+                        break;
+                }
+            }
+        });
+
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.cancel();
+            }
+        });
+    }
+
 
     private HashMap<Integer, QuestionViewModel> createModels(){
         HashMap<Integer, QuestionViewModel> _tmp = new HashMap<>();
@@ -139,7 +245,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
         // Handle navigation view item clicks here.
         switch (item.getItemId()){
             case R.id.nav_logout:
-                receivedStatus = null;
+                status = null;
+                SaveSharedPreferences.setUserName(this,"");
                 navigationView.getMenu().clear(); //clear old inflated items.
                 navigationView.inflateMenu(R.menu.nav_menu); //inflate new items.
                 invalidateOptionsMenu();
@@ -166,6 +273,16 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
                                             .MODE_NIGHT_NO);
                 }
                 break;
+            case R.id.nav_lang:
+                Resources res = getApplicationContext().getResources();
+                // Change locale settings in the app.
+                DisplayMetrics dm = res.getDisplayMetrics();
+                android.content.res.Configuration conf = res.getConfiguration();
+                Locale locale = new Locale("German");
+                conf.setLocale(locale); // API 17+ only.
+                // Use conf.locale = new Locale(...) if targeting lower versions
+                res.updateConfiguration(conf, dm);
+                break;
         }
         //close navigation drawer
         drawerLayout.closeDrawer(GravityCompat.START);
@@ -174,41 +291,29 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu){
-        super.onPrepareOptionsMenu(menu);
-        MenuItem logInMi = menu.findItem(R.id.action_login);
-        MenuItem logInIcon = menu.findItem(R.id.loginIcon);
-        MenuItem logOutMi = menu.findItem(R.id.nav_logout);
-        if(receivedStatus != null){
-            if(receivedStatus.equals("admin")){
-                logInMi.setTitle(R.string.statusAdmin);
-                logInMi.setEnabled(false);
-                logInIcon.setVisible(true);
-                navigationView.getMenu().clear(); //clear old inflated items.
-                navigationView.inflateMenu(R.menu.nav_menu_authorized); //inflate new items.
-            }
-            else if (receivedStatus.equals("default")){
-                logInMi.setTitle(R.string.statusDefault);
-                logInMi.setEnabled(false);
-                logInIcon.setVisible(true);
-                logOutMi.setVisible(true);
-                navigationView.getMenu().clear(); //clear old inflated items.
-                navigationView.inflateMenu(R.menu.nav_menu_authorized); //inflate new items.
-            }
+        if(SaveSharedPreferences.getUserName(this).equals("admin")){
+            getMenuInflater().inflate(R.menu.main_menu_authorized, menu);
+            navigationView.getMenu().clear(); //clear old inflated items.
+            navigationView.inflateMenu(R.menu.nav_menu_authorized); //inflate new items.
+        }
+        else if(SaveSharedPreferences.getUserName(this).equals("default")){
+            getMenuInflater().inflate(R.menu.main_menu_authorized_default, menu);
+            navigationView.getMenu().clear(); //clear old inflated items.
+            navigationView.inflateMenu(R.menu.nav_menu_authorized); //inflate new items.
+        }
+        else{
+            getMenuInflater().inflate(R.menu.main_menu, menu);
         }
         return true;
     }
 
-    @Override
-    public void onResume(){
-        super.onResume();
-        Intent intent = getIntent();
-        receivedStatus = intent.getStringExtra("status");
+    public static void setLocale(Activity activity, String languageCode) {
+        Locale locale = new Locale(languageCode);
+        Locale.setDefault(locale);
+        Resources resources = activity.getResources();
+        Configuration config = resources.getConfiguration();
+        config.setLocale(locale);
+        resources.updateConfiguration(config, resources.getDisplayMetrics());
     }
 
 }
