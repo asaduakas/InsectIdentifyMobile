@@ -24,53 +24,35 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/logo" />
 
-        <TextView
-            android:id="@+id/textView"
-            style="@style/MainTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/inter"
-            android:text="Insect ID"
-            android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logoText" />
-
         <Button
             android:id="@+id/StartBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="-50dp"
-            android:layout_marginTop="22dp"
-            android:layout_marginEnd="-50dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
             android:layout_weight="0"
             android:text="@string/startBtnText"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_min="70dp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.217" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logoText"
+            app:layout_constraintVertical_bias="0.13999999" />
 
         <Button
             android:id="@+id/dataBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="-50dp"
-            android:layout_marginTop="22dp"
-            android:layout_marginEnd="-50dp"
             android:layout_weight="0"
             android:text="@string/addEntry"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="@+id/StartBtn"
             app:layout_constraintHeight_min="70dp"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintStart_toStartOf="@+id/StartBtn"
+            app:layout_constraintTop_toBottomOf="@+id/StartBtn"
+            app:layout_constraintVertical_bias="0.13999999" />
 
         <ImageButton
             android:id="@+id/shtButton"

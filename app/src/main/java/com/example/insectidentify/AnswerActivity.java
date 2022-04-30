@@ -6,13 +6,16 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.insectidentify.databinding.ActivityAnswerBinding;
 
@@ -21,6 +24,7 @@ public class AnswerActivity extends AppCompatActivity {
     private Button restartBtn, saveBtn;
     private QuestionViewModel _vm;
     private static int qID;
+    private TextView order;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,7 @@ public class AnswerActivity extends AppCompatActivity {
 
         restartBtn = findViewById(R.id.restartBtn);
         restartBtn.setOnClickListener(this::onButtonRestartClick);
+        order = findViewById(R.id.textView8);
 
         saveBtn = findViewById(R.id.saveBtn);
         saveBtn.setOnClickListener(this::onButtonSaveClick);
@@ -65,7 +70,8 @@ public class AnswerActivity extends AppCompatActivity {
     }
 
     private void onButtonSaveClick(View v){
-        //TODO: Save to database
+        MainActivity.addToSavedList(order.getText().toString());
+        startActivity(MainActivity.questionIntents.get(0));
     }
 
     @Override

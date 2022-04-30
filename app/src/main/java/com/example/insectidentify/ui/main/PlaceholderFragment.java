@@ -27,6 +27,8 @@ import com.example.insectidentify.databinding.FragmentInsectPagerBinding;
 public class PlaceholderFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
+    private static final String ARG_INSECT = "saved_insect";
+    private static final String ARG_NUM_OF_INSECTS = "number_of_insects";
 
     private PageViewModel pageViewModel;
     private FragmentInsectPagerBinding binding;
@@ -37,6 +39,18 @@ public class PlaceholderFragment extends Fragment {
     TextView counter;
     Button addTabBtn;
     TextView batchName;
+    String insect;
+    Integer numOfInsects;
+
+    public static PlaceholderFragment newInstance(int index, int num, String insect) {
+        PlaceholderFragment fragment = new PlaceholderFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt(ARG_SECTION_NUMBER, index);
+        bundle.putString(ARG_INSECT, insect);
+        bundle.putInt(ARG_NUM_OF_INSECTS, num);
+        fragment.setArguments(bundle);
+        return fragment;
+    }
 
     public static PlaceholderFragment newInstance(int index) {
         PlaceholderFragment fragment = new PlaceholderFragment();
@@ -53,6 +67,8 @@ public class PlaceholderFragment extends Fragment {
         int index = 1;
         if (getArguments() != null) {
             index = getArguments().getInt(ARG_SECTION_NUMBER);
+            insect = getArguments().getString(ARG_INSECT);
+            numOfInsects = getArguments().getInt(ARG_NUM_OF_INSECTS);
         }
         pageViewModel.setIndex(index);
     }
@@ -109,6 +125,7 @@ public class PlaceholderFragment extends Fragment {
         addBtn = getView().findViewById(R.id.add);
         minBtn = getView().findViewById(R.id.subtract);
         counter = getView().findViewById(R.id.counter);
+        counter.setText(numOfInsects.toString());
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

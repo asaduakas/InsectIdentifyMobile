@@ -6,8 +6,13 @@
         android:icon="@drawable/ic_dark_mode_black_48dp"/>
 
     <item
+        android:id="@+id/nav_help"
+        android:title="Tutorial"
+        android:icon="@drawable/ic_help_outline_black_48dp" />
+
+    <item
         android:id="@+id/nav_lang"
-        android:title="@string/lang"
+        android:title="DE"
         android:icon="@drawable/ic_translate_black_48dp"/>
 
     <item

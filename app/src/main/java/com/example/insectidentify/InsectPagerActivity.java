@@ -19,11 +19,16 @@ import android.widget.TextView;
 import com.example.insectidentify.ui.main.SectionsPagerAdapter;
 import com.example.insectidentify.databinding.ActivityInsectPagerBinding;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class InsectPagerActivity extends AppCompatActivity {
 
     private ActivityInsectPagerBinding binding;
     SectionsPagerAdapter sectionsPagerAdapter;
     String batchName;
+    HashMap<String, Integer> savedInsects;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +44,20 @@ public class InsectPagerActivity extends AppCompatActivity {
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
 
-        //Create first page automatically
-        sectionsPagerAdapter.add(PlaceholderFragment.newInstance(sectionsPagerAdapter.getCount()),
-                "INSECT " + String.valueOf(sectionsPagerAdapter.getCount() + 1));
-        sectionsPagerAdapter.notifyDataSetChanged();
+        if(!MainActivity.getSavedList().isEmpty()){
+            savedInsects = MainActivity.getSavedList();
+            for (Map.Entry<String, Integer> set : savedInsects.entrySet()) {
+                sectionsPagerAdapter.add(PlaceholderFragment.newInstance(sectionsPagerAdapter.getCount(), set.getValue(),set.getKey()),
+                        "INSECT " + String.valueOf(sectionsPagerAdapter.getCount() + 1));
+                sectionsPagerAdapter.notifyDataSetChanged();
+            }
+        }
+        else{
+            //Create first page automatically
+            sectionsPagerAdapter.add(PlaceholderFragment.newInstance(sectionsPagerAdapter.getCount()),
+                    "INSECT " + String.valueOf(sectionsPagerAdapter.getCount() + 1));
+            sectionsPagerAdapter.notifyDataSetChanged();
+        }
 
     }
 
@@ -81,4 +96,5 @@ public class InsectPagerActivity extends AppCompatActivity {
     public void setBatchName(TextView batchName) {
         batchName.setText(this.batchName);
     }
+
 }

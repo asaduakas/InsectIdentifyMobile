@@ -31,7 +31,7 @@
     <string name="logOut" translatable="false">Sign Out</string>
     <string name="startBtnText">Start</string>
     <string name="cancelBtn">Cancel</string>
-    <string name="saveBtn">Submit to Database</string>
+    <string name="saveBtn">Save</string>
     <string name="restartBtn">Restart</string>
     <string name="addEntry">Insert an Entry</string>
 
@@ -82,10 +82,28 @@
     </string-array>
 
     <string-array name="orders">
-        <item>Thysanoptera</item>
+        <item>Arachnida</item>
+        <item>Brachycera</item>
+        <item>Coleoptera</item>
+        <item>Collembola</item>
+        <item>Dermaptera</item>
+        <item>Diptera</item>
+        <item>Ephemeroptera</item>
+        <item>Hemiptera</item>
         <item>Heminoptera</item>
-        <item>Lepidoptera</item>
         <item>Heteroptera</item>
+        <item>Hymenoptera</item>
+        <item>Lepidoptera</item>
+        <item>Megaloptera</item>
+        <item>Microlepidoptera</item>
+        <item>Nematocera</item>
+        <item>Neuroptera</item>
+        <item>Odonata</item>
+        <item>Orthoptera</item>
+        <item>Psocoptera</item>
+        <item>Sternorrhyncha</item>
+        <item>Thysanoptera</item>
+        <item>Trichoptera</item>
     </string-array>
 
 </resources>
