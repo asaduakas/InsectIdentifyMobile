@@ -98,6 +98,9 @@ public class QuestionViewModel extends BaseObservable {
         return description;
     }
 
+    public String key;
+    public String getKey(){return key;}
+
     public QuestionViewModel(String title, String question1description, String question2description,
                              String question1image, String question2image, String question1button,
                              String question2button, int question1reference, int question2reference,
@@ -151,7 +154,7 @@ public class QuestionViewModel extends BaseObservable {
         this.image = null;
     }
 
-    public QuestionViewModel(String order, String suborder, String description, String image, int previousQuestionReference){
+    public QuestionViewModel(String order, String suborder, String description, String image, int previousQuestionReference, String key){
         this.title = null;
         this.question1description = null;
         this.question2description = null;
@@ -163,6 +166,8 @@ public class QuestionViewModel extends BaseObservable {
         this.question2reference = 0;
         this.previousQuestionReference = previousQuestionReference;
         this.progress = 100;
+
+        this.key = key;
 
         this.question3description = null;
         this.question3image = null;

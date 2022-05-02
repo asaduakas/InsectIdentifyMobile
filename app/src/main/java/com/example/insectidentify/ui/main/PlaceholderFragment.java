@@ -1,9 +1,12 @@
 package com.example.insectidentify.ui.main;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -11,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -19,11 +23,15 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.insectidentify.InsectPagerActivity;
 import com.example.insectidentify.R;
 import com.example.insectidentify.databinding.FragmentInsectPagerBinding;
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * A placeholder fragment containing a simple view.
  */
-
 public class PlaceholderFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
@@ -41,6 +49,9 @@ public class PlaceholderFragment extends Fragment {
     TextView batchName;
     String insect;
     Integer numOfInsects;
+    TextInputEditText taxonName;
+    TextInputEditText noteField;
+    AutoCompleteTextView textView;
 
     public static PlaceholderFragment newInstance(int index, int num, String insect) {
         PlaceholderFragment fragment = new PlaceholderFragment();
@@ -92,6 +103,9 @@ public class PlaceholderFragment extends Fragment {
 
     @Override
     public void onViewCreated(View v, Bundle savedInstanceState) {
+
+        taxonName = getView().findViewById(R.id.taxName);
+        noteField = getView().findViewById(R.id.notes);
 
         //Batch Name
         batchName = getView().findViewById(R.id.bName);
@@ -151,12 +165,24 @@ public class PlaceholderFragment extends Fragment {
 
         //DROPDOWN
         String[] type = getResources().getStringArray(R.array.orders);
-        ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(getView().getContext(), R.layout.dropdown_menu_item, type);
+        List<String> nameList = new ArrayList<>(Arrays.asList(type));
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getView().getContext(), R.layout.dropdown_menu_item, type);
+        textView = getView().findViewById(R.id.orderDropdown);
+        textView.setAdapter(adapter);
+        if(insect!=null){
+            textView.setText(insect);
+        }
 
-        AutoCompleteTextView editTextFilledExposedDropdown =
-                getView().findViewById(R.id.orderDropdown);
-        editTextFilledExposedDropdown.setAdapter(adapter);
+        textView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        public void onFocusChange(View view, boolean hasFocus) {
+            if(!hasFocus){
+                if(!nameList.contains(textView.getText().toString())){
+                        textView.setText("");
+                        Toast.makeText(getView().getContext(), "Please choose an appropriate insect order!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+        });
 
         //ADD TAB BUTTON
         addTabBtn = getView().findViewById(R.id.addTab);
@@ -168,4 +194,20 @@ public class PlaceholderFragment extends Fragment {
             }
         });
     }
+
+    public String getCounter(){
+        return this.counter.getText().toString();
+    }
+    public String getTaxName(){
+        return this.taxonName.getText().toString();
+    }
+
+    public String getInsectOrder(){
+        return this.textView.getText().toString();
+    }
+
+    public String getNote(){
+        return  this.noteField.getText().toString();
+    }
+
 }

@@ -9,4 +9,18 @@
     <string name="cancelBtn">Abbrechen</string>
     <string name="restartBtn">Neustart</string>
     <string name="addEntry">Eintrag einfügen</string>
+    <string name="logIn" translatable="false">Ammeldung</string>
+    <string name="logOut" translatable="false">Abmeldung</string>
+    <string name="startBtnText">Identifizieren</string>
+    <string name="saveBtn">Zur Dateneingabe hinzufügen</string>
+    <string name="sub">In Datenbank speicher</string>
+    <string name="trapMethod">Fangen Methode:</string>
+    <string name="catchTime">Fangzeit:</string>
+    <string name="field">Feld:</string>
+    <string name="trapNum">Fallennummer:</string>
+    <string name="sDate">Anfangsdatum:</string>
+    <string name="sTime">Anfanszeit:</string>
+    <string name="dataTitle">Dateneingabe</string>
+    <string name="tutorial">Lernprogramm</string>
+    <string name="tname">Taxon Identifikator:</string>
 </resources>

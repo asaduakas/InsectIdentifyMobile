@@ -19,16 +19,16 @@
     <string name="sc">Go to…</string>
     <string name="jump">JUMP</string>
     <string-array name="shortcuts">
-        <item>With wings and a cinched waist</item>
-        <item>With hard/shell like forewings</item>
-        <item>Forewings with hard corium and soft wing tips</item>
-        <item>With 2-3 long appendages</item>
-        <item>With pincer abdomen</item>
+        <item>(Hymenoptera) With wings and a cinched waist</item>
+        <item>(Coleoptera) With hard/shell like forewings</item>
+        <item>(Heteroptera) Forewings with hard corium and soft wing tips</item>
+        <item>(Ephemeroptera) With 2-3 long appendages</item>
+        <item>(Dermaptera) With pincer abdomen</item>
     </string-array>
 
     <!-- Buttons -->
-    <string name="logIn" translatable="false">Sign In</string>
-    <string name="logOut" translatable="false">Sign Out</string>
+    <string name="logIn">Sign In</string>
+    <string name="logOut">Sign Out</string>
     <string name="startBtnText">Start</string>
     <string name="cancelBtn">Cancel</string>
     <string name="saveBtn">Save</string>
@@ -36,30 +36,30 @@
     <string name="addEntry">Insert an Entry</string>
 
     <!-- Toolbar and Menu-->
-    <string name="configureSampleBtn">Configure Sample</string>
-    <string name="home">Home</string>
-    <string name="nav_open">Open</string>
-    <string name="nav_close">Close</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="nav_open" translatable="false">Open</string>
+    <string name="nav_close" translatable="false">Close</string>
     <string name="darkMode">Dark Mode</string>
-    <string name="lang">EN</string>
+    <string name="lang" translatable="false">EN</string>
+    <string name="tutorial">Tutorial</string>
 
     <!-- Data Activity Dropdowns-->
-    <string name="trapMethod">Trapping Method</string>
-    <string name="catchTime">Catch Time</string>
-    <string name="field">Field</string>
-    <string name="trapNum">Trap Number</string>
+    <string name="trapMethod">Trapping Method:</string>
+    <string name="catchTime">Catch Time:</string>
+    <string name="field">Field:</string>
+    <string name="trapNum">Trap Number:</string>
     <string name="sDate">Starting Date :</string>
     <string name="sTime">Starting Time :</string>
     <string name="dataTitle">Data Entry</string>
-    <string name="date">dd/mm/yy</string>
-    <string name="time">HH:MM</string>
+    <string name="date" translatable="false">dd/mm/yy</string>
+    <string name="time" translatable="false">HH:MM</string>
     <string name="toastWarning">Please fill out all of the fields!</string>
 
     <!-- Insect Entry-->
-    <string name="bname">Batch Name</string>
-    <string name="tname">Taxon Identifier Name</string>
-    <string name="insectOrder">Insect Order</string>
-    <string name="note">Note</string>
+    <string name="bname">Batch Name:</string>
+    <string name="tname">Taxon Identifier Name:</string>
+    <string name="insectOrder">Insect Order:</string>
+    <string name="note">Note:</string>
     <string name="sub">Submit</string>
     <string name="add">Add another one</string>
     <string name="ready">I am ready to submit</string>

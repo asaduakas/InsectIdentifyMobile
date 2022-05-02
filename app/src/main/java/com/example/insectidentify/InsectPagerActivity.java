@@ -8,6 +8,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
+import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +20,7 @@ import android.widget.TextView;
 import com.example.insectidentify.ui.main.SectionsPagerAdapter;
 import com.example.insectidentify.databinding.ActivityInsectPagerBinding;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,6 +31,7 @@ public class InsectPagerActivity extends AppCompatActivity {
     SectionsPagerAdapter sectionsPagerAdapter;
     String batchName;
     HashMap<String, Integer> savedInsects;
+    List<Entry> saveList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +61,6 @@ public class InsectPagerActivity extends AppCompatActivity {
                     "INSECT " + String.valueOf(sectionsPagerAdapter.getCount() + 1));
             sectionsPagerAdapter.notifyDataSetChanged();
         }
-
     }
 
     public void onClickAddTab(){
@@ -68,8 +70,24 @@ public class InsectPagerActivity extends AppCompatActivity {
         sectionsPagerAdapter.notifyDataSetChanged();
     }
 
-
     public void onClickSub() {
+        ArrayList<Fragment> fragmentArrayList = sectionsPagerAdapter.getFragments();
+        for (int i=0; i < fragmentArrayList.size(); i++){
+            PlaceholderFragment currFragment = (PlaceholderFragment) fragmentArrayList.get(i);
+            String currCounter = currFragment.getCounter();
+            if(!currCounter.equals("0")){
+                String tm = getIntent().getStringExtra("trapMethod");
+                String ct = getIntent().getStringExtra("catchTime");
+                String field = getIntent().getStringExtra("field");
+                String tn = getIntent().getStringExtra("trapNum");
+                String sd = getIntent().getStringExtra("startDate");
+                String st = getIntent().getStringExtra("startTime");
+                String od = currFragment.getInsectOrder();
+                String tx = currFragment.getTaxName();
+                String nt = currFragment.getNote();
+                Entry newEntry = new Entry(batchName, tm, ct, field, tn, sd, st, od, tx, nt);
+            }
+        }
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
@@ -95,6 +113,33 @@ public class InsectPagerActivity extends AppCompatActivity {
 
     public void setBatchName(TextView batchName) {
         batchName.setText(this.batchName);
+    }
+
+    public static class Entry{
+        String bName;
+        String trapMethod;
+        String catchTime;
+        String field;
+        String trapNum;
+        String sDate;
+        String sTime;
+        String order;
+        String taxName;
+        String note;
+
+        public Entry(String bName, String trapMethod, String catchTime, String field, String trapNum,
+                     String sDate, String sTime, String order, String taxName, String note){
+            this.bName = bName;
+            this.trapMethod = trapMethod;
+            this.catchTime = catchTime;
+            this.field = field;
+            this.trapNum = trapNum;
+            this.sDate = sDate;
+            this.sTime = sTime;
+            this.order = order;
+            this.taxName = taxName;
+            this.note = note;
+        }
     }
 
 }

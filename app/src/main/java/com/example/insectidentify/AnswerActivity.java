@@ -47,7 +47,7 @@ public class AnswerActivity extends AppCompatActivity {
 
         saveBtn = findViewById(R.id.saveBtn);
         saveBtn.setOnClickListener(this::onButtonSaveClick);
-        if(SaveSharedPreferences.getUserName(this).length() != 0){
+        if(SaveSharedPreferences.getUserName(this).length() != 0 && !_vm.getKey().equals("")){
             saveBtn.setEnabled(true);
             saveBtn.setVisibility(View.VISIBLE);
         }

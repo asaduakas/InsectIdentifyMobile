@@ -256,6 +256,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
                 FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) view.getLayoutParams();
                 params.gravity = Gravity.TOP;
                 view.setLayoutParams(params);
+                recreate();
                 confirmationMessage.show();
                 break;
             case R.id.nav_darkMode:

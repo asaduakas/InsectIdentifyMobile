@@ -31,6 +31,7 @@
                 android:layout_marginBottom="10dp" />
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/taxName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/tname" />
@@ -49,21 +50,13 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
             app:layout_constraintVertical_bias="0.060000002">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout"
-                style="@style/exposedDropdown"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/insectOrder"
-                android:orientation="horizontal">
-
                 <AutoCompleteTextView
                     android:id="@+id/orderDropdown"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none" />
+                    android:hint="@string/insectOrder"
+                    android:inputType="textPhonetic"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/notes"

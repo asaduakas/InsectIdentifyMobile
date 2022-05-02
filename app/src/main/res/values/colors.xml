@@ -13,5 +13,6 @@
     <color name="black">#21262E</color>
     <color name="cyan">#00BDD6</color>
     <color name="blue">#1091F4</color>
+    <color name="gray">#D5D5D5</color>
 
 </resources>

@@ -154,6 +154,12 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
 
             Intent intent = new Intent(this,InsectPagerActivity.class);
             intent.putExtra("bName",bName);
+            intent.putExtra("trapMethod", v1);
+            intent.putExtra("catchTime",editTextFilledExposedDropdown1.getText().toString());
+            intent.putExtra("field",v4);
+            intent.putExtra("trapNum",v2);
+            intent.putExtra("startDate",v3);
+            intent.putExtra("startTime",eTextTime.getText().toString());
             startActivity(intent);
         }
         else{

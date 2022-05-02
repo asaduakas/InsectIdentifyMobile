@@ -33,6 +33,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         fragments.add(fragment);
     }
 
+    public ArrayList<Fragment> getFragments(){
+        return fragments;
+    }
+
     @Override
     public Fragment getItem(int position) {
         return fragments.get(position);
@@ -50,7 +54,5 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
-
-    }
+    public void destroyItem(ViewGroup container, int position, Object object) { }
 }
