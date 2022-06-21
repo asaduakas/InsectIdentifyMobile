@@ -7,15 +7,10 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.UiModeManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -25,21 +20,17 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.internal.NavigationMenu;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.*;
 
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener, NavigationView.OnNavigationItemSelectedListener {
@@ -53,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
     private View popupTutorialView;
     private AutoCompleteTextView cutDropdown;
     private Button jumpBtn;
-    private Button cancelBtn;
 
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
@@ -107,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
 
                 // Create a AlertDialog Builder.
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
-                // Set title, icon, can not cancel properties.
+                // Set title, icon, can cancel properties.
                 alertDialogBuilder.setTitle("Shortcut");
                 alertDialogBuilder.setCancelable(true);
 
@@ -134,7 +124,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
         // Get user input edittext and button ui controls in the popup dialog.
         cutDropdown = popupInputDialogView.findViewById(R.id.shortcutDropdown);
         jumpBtn = popupInputDialogView.findViewById(R.id.jumpBtn);
-        cancelBtn = popupInputDialogView.findViewById(R.id.cancelBtn);
 
         //Trapping dropdown
         String[] type = getResources().getStringArray(R.array.shortcuts);
@@ -150,29 +139,22 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
             public void onClick(View view) {
                 String destination = cutDropdown.getText().toString();
                 switch (destination) {
-                    case "With wings and a cinched waist":
+                    case "(Hymenoptera) With wings and a cinched waist":
                         startActivity(questionIntents.get(39));
                         break;
-                    case "With hard/shell like forewings":
+                    case "(Coleoptera) With hard/shell like forewings":
                         startActivity(questionIntents.get(6));
                         break;
-                    case "Forewings with hard corium and soft wing tips":
+                    case "(Heteroptera) Forewings with hard corium and soft wing tips":
                         startActivity(questionIntents.get(7));
                         break;
-                    case "With 2-3 long appendages":
+                    case "(Ephemeroptera) With 2–3 long appendages":
                         startActivity(questionIntents.get(35));
                         break;
-                    case "With pincer abdomen":
+                    case "(Dermaptera) With pincer abdomen":
                         startActivity(questionIntents.get(26));
                         break;
                 }
-            }
-        });
-
-        cancelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertDialog.cancel();
             }
         });
     }
@@ -275,11 +257,20 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
                 }
                 break;
             case R.id.nav_lang:
-                Locale locale = new Locale("DE");
                 Configuration config = getBaseContext().getResources().getConfiguration();
-                config.locale = locale;
-                getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-                recreate();
+                if(config.locale.getLanguage().equals("de")){
+                    Locale locale = new Locale("EN");
+                    config.locale = locale;
+                    getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+                    recreate();
+                }
+                else{
+                    Locale locale = new Locale("DE");
+                    config.locale = locale;
+                    getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+                    recreate();
+                }
+                break;
             case R.id.nav_help:
                 LayoutInflater layoutInflater = LayoutInflater.from(MainActivity.this);
                 popupTutorialView = layoutInflater.inflate(R.layout.popup_tutorial, null);

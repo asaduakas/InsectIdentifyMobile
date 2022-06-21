@@ -7,7 +7,7 @@
     <string name="DefaultPass" translatable="false">0d9548d7d5e894e2c5eb76e72ff587d1cfdf02e241c535cf2d68a88e629e0401</string>
 
     <!-- Main and Login activities -->
-    <string name="statusEmpty" translatable="false"></string>
+    <string name="statusEmpty" translatable="false" />
     <string name="statusAdmin" translatable="false">Admin</string>
     <string name="statusDefault">Default</string>
     <string name="usernameHint">Username</string>
@@ -22,7 +22,7 @@
         <item>(Hymenoptera) With wings and a cinched waist</item>
         <item>(Coleoptera) With hard/shell like forewings</item>
         <item>(Heteroptera) Forewings with hard corium and soft wing tips</item>
-        <item>(Ephemeroptera) With 2-3 long appendages</item>
+        <item>(Ephemeroptera) With 2–3 long appendages</item>
         <item>(Dermaptera) With pincer abdomen</item>
     </string-array>
 
@@ -51,12 +51,12 @@
     <string name="sDate">Starting Date :</string>
     <string name="sTime">Starting Time :</string>
     <string name="dataTitle">Data Entry</string>
-    <string name="date" translatable="false">dd/mm/yy</string>
-    <string name="time" translatable="false">HH:MM</string>
+    <string name="date">dd/mm/yy</string>
+    <string name="time">HH:MM</string>
     <string name="toastWarning">Please fill out all of the fields!</string>
 
     <!-- Insect Entry-->
-    <string name="bname">Batch Name:</string>
+    <string name="bname" translatable="false">Batch Name:</string>
     <string name="tname">Taxon Identifier Name:</string>
     <string name="insectOrder">Insect Order:</string>
     <string name="note">Note:</string>
